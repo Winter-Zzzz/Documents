@@ -1,4 +1,4 @@
-%% MATTER_Tunnel.tex
+%% Matter_Tunnel.tex
 %% 2024/10/7
 %% by Dongwook Kim, Jisu Shin, Giram Park, Seoyoon Jung
 
@@ -11,183 +11,280 @@
 
 \begin{document}
 
-\title{MATTER Tunnel}
+\title{Matter Tunnel}
 
 \author{
-\IEEEauthorblockN{Dongwook Kim}
-\IEEEauthorblockA{\textit{College of Engineering} \\
-\textit{Hanyang University}\\
-\textit{Dept.of Information Systems}\\
-Seoul, Korea \\
-dongwook1214@gmail.com}
-\and
-\IEEEauthorblockN{Jisu Shin}
-\IEEEauthorblockA{\textit{College of Engineering} \\
-\textit{Hanyang University}\\
-\textit{Dept.of Information Systems}\\
-Seoul, Korea \\
-sjsz0811@hanyang.ac.kr}
-\and
-\IEEEauthorblockN{Giram Park}
-\IEEEauthorblockA{\textit{College of Engineering} \\
-\textit{Hanyang University}\\
-\textit{Dept.of Information Systems}\\
-Seoul, Korea \\
-kirammida@hanyang.ac.kr}
-\and
-\IEEEauthorblockN{Seoyoon Jung}
-\IEEEauthorblockA{\textit{College of Engineering} \\
-\textit{Hanyang University}\\
-\textit{Dept.of Information Systems}\\
-Seoul, Korea \\
-yoooonnn@naver.com}
+	\IEEEauthorblockN{Dongwook Kim}
+	\IEEEauthorblockA{\textit{College of Engineering} \\
+		\textit{Hanyang University}\\
+		\textit{Dept.of Information Systems}\\
+		Seoul, Korea \\
+	dongwook1214@gmail.com}
+	\and
+	\IEEEauthorblockN{Jisu Shin}
+	\IEEEauthorblockA{\textit{College of Engineering} \\
+		\textit{Hanyang University}\\
+		\textit{Dept.of Information Systems}\\
+		Seoul, Korea \\
+	sjsz0811@hanyang.ac.kr}
+	\and
+	\IEEEauthorblockN{Giram Park}
+	\IEEEauthorblockA{\textit{College of Engineering} \\
+		\textit{Hanyang University}\\
+		\textit{Dept.of Information Systems}\\
+		Seoul, Korea \\
+	kirammida@hanyang.ac.kr}
+	\and
+	\IEEEauthorblockN{Seoyoon Jung}
+	\IEEEauthorblockA{\textit{College of Engineering} \\
+		\textit{Hanyang University}\\
+		\textit{Dept.of Information Systems}\\
+		Seoul, Korea \\
+	yoooonnn@naver.com}
 }
 \maketitle
 
 \begin{abstract}
-Our team introduces "MATTER Tunnel," which enables the MATTER protocol to operate on a blockchain basis. MATTER is a protocol that provides interoperability between IoT devices from various manufacturers, allowing control of multiple brands of IoT devices from a single application. However, due to current network constraints such as NAT and firewalls, a dedicated MATTER hub is required when using MATTER devices.
-The mandatory use of MATTER hubs degrades user experience and causes many issues, including user dependence on specific platforms. MATTER Tunnel resolves these current limitations of MATTER by utilizing blockchain technology. This technology operates as if creating a virtual private network between applications and IoT devices on a blockchain.
-MATTER Tunnel will enhance user experience, enable complete end-to-end encryption (E2EE), and lower the entry barriers for small development teams into the MATTER ecosystem. With the introduction of MATTER Tunnel, security of IoT devices will be strengthened, and users will be able to enjoy a more unrestricted IoT experience.
+	Our team introduces "Matter Tunnel," which enables the Matter protocol to operate on a blockchain basis. Matter is a protocol that provides interoperability between IoT devices from various manufacturers, allowing control of multiple brands of IoT devices from a single application. However, due to current network constraints such as NAT and firewalls, a dedicated Matter hub is required when using Matter devices.
+	Matter Tunnel resolves the current limitations of Matter by utilizing blockchain technology, operating as if creating a virtual private network between applications and IoT devices. Primarily, it eliminates the mandatory use of Matter hubs, significantly enhancing user experience and flexibility. This innovation also extends the operational range of Matter devices, allowing them to be placed and controlled beyond the confines of a home. Users can easily manage devices in various environments such as home, workspaces, and vehicles through a single application.
+	Furthermore, Matter Tunnel ensures platform independence, freeing users from being locked into specific ecosystems. It strengthens security by enabling complete end-to-end encryption (E2EE) and enhances user privacy. Additionally, by lowering entry barriers, Matter Tunnel opens up opportunities for small development teams to participate in the Matter ecosystem. With these improvements, users can enjoy a more secure, versatile, and unrestricted IoT experience.
 \end{abstract}
 
 \begin{IEEEkeywords}
-MATTER Tunnel, MATTER, MATTER hub, Blockchain, user experience, E2EE
+	Matter Tunnel, Matter, Blockchain, Matter hub, user experience, E2EE
 \end{IEEEkeywords}
 
 \begin{table}[h]
-\caption{Role Assignments}
-\def\arraystretch{1.24} \small
-    \begin{tabular}{|p{1.8cm}|p{1.4cm}|p{4.4cm}|}
-        \hline
-         Roles & Name & Task description and etc. \\ \hline
-         
-         Development \par manager \par Blockchain \par Developer & Dongwook \par Kim & The role involves designing and implementing solutions utilizing blockchain technology. This position sets the technical direction for projects and applies the latest blockchain trends and technologies. Responsibilities include developing smart contracts, optimizing blockchain protocols, managing team members' work, and developing their skills.\\ \hline
-
-         User, \par Customer, \par Front-end \par Developer & Jisu \par Shin & From user and customer perspective, considers what features would enhance the IoT experience and how to improve user interaction. From a development perspective, designs and implements user interfaces for IoT applications, focusing on intuitive and responsive front-end solutions that integrate with MATTER protocol and blockchain technology.\\ \hline
-        
-    \end{tabular}
+	\caption{Role Assignments}
+	\def\arraystretch{1.24} \small
+	\begin{tabular}{|p{1.8cm}|p{1.4cm}|p{4.4cm}|}
+		\hline
+		Roles                                                   & Name              & Task description and etc.                                                                                                                                                                                                                                                                                                                                  \\ \hline
+		         
+		Development \par manager \par Blockchain \par Developer & Dongwook \par Kim & The role involves designing and implementing solutions utilizing blockchain technology. This position sets the technical direction for projects and applies the latest blockchain trends and technologies. Responsibilities include developing smart contracts, optimizing blockchain protocols, managing team members' work, and developing their skills. \\ \hline
+		        
+	\end{tabular}
 \end{table}
 
 \needspace{10cm}
 
 \begin{table}
-\def\arraystretch{1.24} \small
-    \begin{tabular}{|p{1.8cm}|p{1.4cm}|p{4.4cm}|}
-        \hline
-        User, \par Customer, \par Embedded \par Developer & Giram \par Park & From a user standpoint, evaluates how IoT devices can better serve everyday needs. As a Embedded developer, works on firmware and software for IoT devices compatible with the MATTER protocol and proposed blockchain solution. Focuses on implementing user-centric features that enhance device functionality, improve reliability, and simplify setup processes.\\ \hline
-        
-        User, \par Customer, \par Front-end \par Developer & Seoyoon \par Jung & From user and customer perspective, considers what features would enhance the IoT experience and how to improve user interaction. From a development perspective, designs and implements user interfaces for IoT applications, focusing on intuitive and responsive front-end solutions that integrate with MATTER protocol and blockchain technology. Aims to create user-friendly interfaces that simplify device control and management.\\ \hline
-    \end{tabular}
+	\def\arraystretch{1.24} \small
+	\begin{tabular}{|p{1.8cm}|p{1.4cm}|p{4.4cm}|}
+		\hline
+		        
+		User, \par Customer, \par Front-end \par Developer & Jisu \par Shin    & From user and customer perspective, considers what features would enhance the IoT experience and how to improve user interaction. From a development perspective, designs and implements user interfaces for IoT applications, focusing on intuitive and responsive front-end solutions that integrate with Matter protocol and blockchain technology.                                                                                      \\ \hline
+		        
+		User, \par Customer, \par Embedded \par Developer  & Giram \par Park   & From a user standpoint, evaluates how IoT devices can better serve everyday needs. As an Embedded developer, works on firmware and software for IoT devices compatible with the Matter protocol and proposed blockchain solution. Focuses on implementing user-centric features that enhance device functionality, improve reliability, and simplify setup processes.                                                                       \\ \hline
+		        
+		User, \par Customer, \par Front-end \par Developer & Seoyoon \par Jung & From user and customer perspective, considers what features would enhance the IoT experience and how to improve user interaction. From a development perspective, designs and implements user interfaces for IoT applications, focusing on intuitive and responsive front-end solutions that integrate with Matter protocol and blockchain technology. Aims to create user-friendly interfaces that simplify device control and management. \\ \hline
+	\end{tabular}
 \end{table}
 
 \section{Introduction}
 
 \subsection{Motivation}
-The rapid advancement of Internet of Things (IoT) technology has led to significant growth in the smart home market. However, compatibility issues among IoT devices from various manufacturers have been a persistent challenge. To address this problem, the MATTER protocol was developed, offering an approach that enables control of IoT devices from multiple brands through a single application.
+The rapid advancement of Internet of Things (IoT) technology has led to significant growth in the smart home market. However, compatibility issues among IoT devices from various manufacturers have been a persistent challenge. To address this problem, the Matter protocol was developed, offering an approach that enables control of IoT devices from multiple brands through a single application.
 
-Despite the introduction of the MATTER protocol, the current implementation still harbors several crucial issues. These problems prevent the full realization of MATTER's original goals: true interoperability, security, and protection of user privacy. Therefore, we believe a new approach is necessary to overcome these limitations and maximize the potential of the MATTER protocol.
+Despite the introduction of the Matter protocol, the current implementation still harbors several crucial issues. These problems prevent the full realization of Matter's original goals: true interoperability, security, and protection of user privacy. Therefore, we believe a new approach is necessary to overcome these limitations and maximize the potential of the Matter protocol.
 
 \subsection{Problem Statement}
-The current implementation of the MATTER protocol presents the following key issues:
+The current implementation of the Matter protocol presents the following key issues:
 
-Difficulty in P2P Communication Due to Network Constraints: Network limitations such as NAT and firewalls make direct P2P communication between IoT devices and applications challenging in typical households. This necessitates the use of dedicated MATTER hubs.
+Mandatory use of  Matter hubs: Network limitations such as NAT and firewalls make direct P2P communication between IoT devices and applications challenging in typical households. This necessitates the use of dedicated Matter hubs.
+
+Limited Operational Range: As a consequence of the mandatory use of Matter hubs, the operational range of Matter is confined to the home. This limitation restricts the potential for broader IoT applications and remote device management beyond the immediate household environment.
 
 Platform Dependency: The need for platform-specific solutions, such as Apple's "HomeKit" and "HomePod" or Google's "Google Home" and "Nest Hub," results in consumers being locked into particular platforms.
 
-Limited End-to-End Encryption (E2EE): The advantage of E2EE in the MATTER protocol is confined to operation within private networks, failing to ensure complete security throughout the entire communication process.
+Limited End-to-End Encryption (E2EE): The advantage of E2EE in the Matter protocol is confined to operation within private networks, failing to ensure complete security throughout the entire communication process.
 
 Threats to User Privacy: The communication structure that routes through cloud services potentially threatens user privacy.
 
-Centralized Authentication System: MATTER devices must be certified by a centralized root certificate authority (CA), which makes it difficult for small development teams to participate and limits consumer choices.
+Centralized Authentication System: Matter devices must be certified by a centralized root certificate authority (CA), which makes it difficult for small development teams to participate and limits consumer choices.
 
-These issues hinder the original purposes of the MATTER protocol: interoperability, security, and openness. Therefore, we have determined that a new approach is necessary to overcome these limitations and fully realize the potential of the MATTER protocol. We propose a solution utilizing blockchain technology to address these challenges.
+These issues hinder the original purposes of the Matter protocol: interoperability, security, and openness. Therefore, we have determined that a new approach is necessary to overcome these limitations and fully realize the potential of the Matter protocol. We propose a solution utilizing blockchain technology to address these challenges.
 
-\subsection{Research on related software}
+\subsection{Research on related technical elements}
 
 \begin{enumerate}[itemsep=2ex, parsep=1ex]
-    \item MATTER
-    
-    We use a variety of IoT devices, and several manufacturers develop and sell IoT devices with different names and appearances. It is Matter that enables these various smart home devices to be connected and managed at once.
-    
-    Matter is an IP-based smart home interworking standard that is compatible with all devices, designed to overcome the manufacturer-dependent limitations of smart home devices. It was launched in 2019 by four IoT giants Apple, Amazon, Google, Samsung SmartThings, and the global association CSA, formerly the Zigbee Alliance, and renamed Matter in 2021.
-    
-    Matter has the following technical features:
-    
-    Unlike existing ZigBee and Z-Wave, Matter operates based on IP protocols. The fact that Matter is based on IP, a network layer protocol, means that as long as it supports only IP, the communication protocols under it will not matter, and eventually, all processing will be done at the application layer. In other words, the transmission method varies depending on what application is, but as long as you use IP, that method is not important. Therefore, devices with the Matter logo can work together regardless of different brands or supported transmission protocols. In addition, the reason why it is important to use IP is that IP protocols are already proven in the market in terms of interoperability and security.
-    
-    Matter is interoperable between devices. Matter allows each device to interact using the same protocol, even if it is from a different manufacturer. For example, Samsung Electronics' products have been linked to SmartThings, and LG Electronics only to the ThinQ platform, but now Samsung Electronics' products can be connected to ThinQ. Matter is a very desirable standard from a user's point of view because most homes use a mixture of products from multiple brands.
-    
-    Matter supports both Wi-Fi and Thread, a low-power mesh network protocol, and supports various network protocols, such as using BLE in the device setting process.
-    
-    In addition, Matter has the characteristics of Multi-Admin, which uses the same device in conjunction with multiple platforms, AES authentication prescribed by NIST in the United States regarding data encryption, and PKI and certificates for device authentication.
-    
-    An open ecosystem is being created with the introduction of Matter with these characteristics, and the trend of automation and intelligence of residential environments is spreading through integration with Generative AI technology. Korea is also promoting active efforts to build and expand a smart home ecosystem by preparing support plans in line with global trends. The Korean government is expanding policy support by promoting 'AI@Home', a project centered on Matter and Generative AI, to support the creation of a smart home ecosystem.
-    
-    However, privacy protection, application of smart home technology of existing houses, and high installation costs are challenges that limit the growth of the market, so it is necessary to proactively prepare countermeasures.
-    
-    \item Network Constraints in P2P Communication
-    
-    In a P2P (Peer-to-Peer) structure, there is minimal reliance on always-on infrastructure servers. Instead, the application allows pairs of intermittently connected hosts, called peers, to communicate directly with each other. Peers are desktops and laptops controlled by users rather than owned by service providers, and most peers are located in homes, universities, and offices. Since communication occurs directly between peers without passing through a specific server, this structure is referred to as Peer-to-Peer. 
-
-    Network constraints in P2P communication negatively impact user experience by assigning additional complex tasks to users.
-    
-    NAT (Network Address Translation) and Firewalls: 
-    When many peers are behind NAT, NAT converts the private network's IP addresses into public IP addresses, allowing communication with external networks. However, NAT can block incoming connections, making it difficult for peers behind NAT to be accessed directly from the outside.
-    Firewalls also block incoming connections from external networks, hindering communication between peers.
-    To address these constraints, NAT traversal technologies like STUN, TURN, and ICE are required, or users may need to manually configure complicated network settings, such as port forwarding, to facilitate incoming connections. These manual configurations can bypass NAT and firewall restrictions, enabling direct access to specific services within the internal network from external sources.
-    
-    \item Matter hub
-    
-    Matter Hub is a central component of the Matter ecosystem, designed to facilitate seamless communication and interoperability between smart home devices from various manufacturers. Matter aims to unify different smart home technologies, allowing devices to work together regardless of brand.
-    
-    Smart Home Hubs serve as central controllers for smart home devices, enabling communication between Matter-compatible devices from different manufacturers. Samsung SmartThings and Amazon Echo are representative examples.
-    
-    MATTER Hubs connect Matter devices to the internet and other networks, allowing for remote access and control. Notable examples include Google Nest Hub, which integrates with Google services, and Apple HomePod, which utilizes Siri for voice commands.
-    
-    While Matter Hubs play a crucial role in enhancing interoperability within the smart home ecosystem, it's important to note that using Matter devices typically requires a home hub. Each application may dictate the specific Matter hub that must be used, which can strictly lock users into particular platforms. This limitation highlights the need for greater flexibility and broader compatibility in the Matter ecosystem to ensure a truly open and user-friendly IoT environment.
-
-    \item Blockchain
-    
-    To effectively integrate blockchain technology into the IoT industry, it is crucial to consider blockchains with high transaction processing speeds (TPS) and enterprise-friendly features. 
-    
-    Several blockchain platforms stand out for their high TPS capabilities, including:
-    
-	Solana: Capable of processing up to 65,000 transactions per second
- 
-	XRP: Achieves around 1,500 TPS
- 
-	Hyperledger Fabric: Can process 2,000 to 20,000 TPS depending on the network configuration
- 
-    Among enterprise-friendly blockchain platforms, the following are noteworthy:
-    
-    	Hyperledger Fabric: Designed specifically for enterprise use
-     
-    	Quorum: An enterprise-focused version of Ethereum
-     
-    	Hyperledger  Besu: An Ethereum client designed for enterprise deployments, offering both public and private network capabilities
-     
-    After careful consideration of these options, Hyperledger Fabric is judged as the most suitable blockchain platform for the IoT industry. It offers a combination of high TPS and enterprise-grade features that are essential for large-scale IoT implementations.
-    Furthermore, Hyperledger Fabric is compatibility with Monachain, a blockchain platform developed by LG CNS based on Hyperledger Fabric. This compatibility allows for seamless integration and immediate application in existing systems, potentially accelerating adoption and reducing implementation barriers.
-    
+	\item Matter
+	          
+	      We use a variety of IoT devices, and several manufacturers develop and sell IoT devices with different names and appearances. It is Matter that enables these various smart home devices to be connected and managed at once.
+	          
+	      Matter is an IP-based smart home interworking standard that is compatible with all devices, designed to overcome the manufacturer-dependent limitations of smart home devices. It was launched in 2019 by four IoT giants Apple, Amazon, Google, Samsung SmartThings, and the global association CSA, formerly the Zigbee Alliance, and renamed Matter in 2021.
+	          
+	      Matter has the following technical features:
+	          
+	      Unlike existing ZigBee and Z-Wave, Matter operates based on IP protocols. Since Matter is based on IP, which is a network layer protocol, the communication protocol below it does not matter, and eventually all processing is done at the application layer. In other words, the transmission method varies depending on what the application is, but as long as IP is used, the method is not important. Therefore, devices with the Matter logo can work together regardless of brands or supported transmission protocols. In addition, the reason why it is important to use IP is that IP protocols are already proven in the market in terms of interoperability and security.
+	          
+	      Matter is interoperable between devices. Matter allows each device to interact using the same protocol, even if it is from a different manufacturer. For example, Samsung Electronics' products have been linked to SmartThings, and LG Electronics only to the ThinQ platform, but now Samsung Electronics' products can be connected to ThinQ. Matter is a very desirable standard from a user's point of view because most homes use a mixture of products from multiple brands.
+	          
+	      Matter supports both Wi-Fi and Thread, a low-power mesh network protocol, and supports various network protocols, such as using BLE in the device setting process.
+	          
+	      In addition, Matter has the characteristics of Multi-Admin, which uses the same device in conjunction with multiple platforms, AES authentication prescribed by NIST in the United States regarding data encryption, and PKI and certificates for device authentication.
+	          
+	      An open ecosystem is being created with the introduction of Matter with these characteristics, and the trend of automation and intelligence of residential environments is spreading through integration with Generative AI technology. Korea is also promoting active efforts to build and expand a smart home ecosystem by preparing support plans in line with global trends. The Korean government is expanding policy support by promoting 'AI@Home', a project centered on Matter and Generative AI, to support the creation of a smart home ecosystem.
+	          
+	      However, privacy protection, application of smart home technology of existing houses, and high installation costs are challenges that limit the growth of the market, so it is necessary to proactively prepare countermeasures.
+	          
+	\item Network Constraints in P2P Communication
+	          
+	      In a Peer-to-Peer (P2P) structure, there is minimal reliance on always-on infrastructure servers. Instead, the application allows pairs of intermittently connected hosts, called peers, to communicate directly with each other. Peers are desktops and laptops controlled by users rather than owned by service providers, and most peers are located in homes, universities, and offices. Since communication occurs directly between peers without passing through a specific server, this structure is referred to as Peer-to-Peer. 
+	      
+	      Network constraints in P2P communication negatively impact user experience by assigning additional complex tasks to users.
+	          
+	      NAT (Network Address Translation) and Firewalls: 
+	      When many peers are behind NAT, NAT converts the private network's IP addresses into public IP addresses, allowing communication with external networks. However, NAT can block incoming connections, making it difficult for peers behind NAT to be accessed directly from the outside.
+	      Firewalls also block incoming connections from external networks, hindering communication between peers.
+	      To address these constraints, NAT traversal technologies like STUN, TURN, and ICE are required, or users may need to manually configure complicated network settings, such as port forwarding, to facilitate incoming connections. These manual configurations can bypass NAT and firewall restrictions, enabling direct access to specific services within the internal network from external sources.
+	          
+	\item Matter hub
+	          
+	      Matter Hub is a central component of the Matter ecosystem, designed to facilitate seamless communication and interoperability between smart home devices from various manufacturers. Matter aims to unify different smart home technologies, allowing devices to work together regardless of brand.
+	          
+	      Smart Home Hubs serve as central controllers for smart home devices, enabling communication between Matter-compatible devices from different manufacturers. Samsung SmartThings and Amazon Echo are representative examples.
+	          
+	      Matter Hubs connect Matter devices to the internet and other networks, allowing for remote access and control. Notable examples include Google Nest Hub, which integrates with Google services, and Apple HomePod, which utilizes Siri for voice commands.
+	          
+	      While Matter Hubs play a crucial role in enhancing interoperability within the smart home ecosystem, it's important to note that using Matter devices typically requires a home hub. Each application may dictate the specific Matter hub that must be used, which can strictly lock users into particular platforms. This limitation highlights the need for greater flexibility and broader compatibility in the Matter ecosystem to ensure a truly open and user-friendly IoT environment.
+	      
+	\item Blockchain
+	          
+	      To effectively integrate blockchain technology into the IoT industry, it is crucial to consider blockchains with high transaction processing speeds (TPS) and enterprise-friendly features. 
+	          
+	      Several blockchain platforms stand out for their high TPS capabilities, including:
+	          
+	      Solana: Capable of processing up to 65,000 transactions per second
+	       
+	      XRP: Achieves around 1,500 TPS
+	       
+	      Hyperledger Fabric: Can process 2,000 to 20,000 TPS depending on the network configuration
+	       
+	      Among enterprise-friendly blockchain platforms, the following are noteworthy:
+	          
+	      Hyperledger Fabric: Designed specifically for enterprise use
+	           
+	      Quorum: An enterprise-focused version of Ethereum
+	           
+	      Hyperledger  Besu: An Ethereum client designed for enterprise deployments, offering both public and private network capabilities
+	           
+	      After careful consideration of these options, Hyperledger Fabric is judged as the most suitable blockchain platform for the IoT industry. It offers a combination of high TPS and enterprise-grade features that are essential for large-scale IoT implementations.
+	      Furthermore, Hyperledger Fabric is compatibility with Monachain, a blockchain platform developed by LG CNS based on Hyperledger Fabric. This compatibility allows for seamless integration and immediate application in existing systems, potentially accelerating adoption and reducing implementation barriers.
+	      
+	\item Arduino
+	      
+	      Arduino is an open-source electronics platform based on easy-to-use hardware and software. In the context of Matter IoT, Arduino plays a significant role due to its flexibility, ease of use, and strong community support. When considering Arduino for Matter IoT applications, the following aspects are crucial:
+	          
+	      Processing power: Matter protocol requires sufficient computational resources to handle encryption and network communication.
+	          
+	      Connectivity options: Wi-Fi or Ethernet capability is essential for Matter, as it's IP-based.
+	          
+	      Memory capacity: Adequate RAM and flash memory to run Matter stack and application code.
+	          
+	      Power efficiency: For battery-operated IoT devices, low power consumption is critical.
+	          
+	      Compatibility with Matter SDK: The board should be capable of running the Matter SDK.
+	          
+	      Some Arduino boards suitable for Matter IoT projects include:
+	          
+	      Arduino Nano 33 IoT: This compact board features Wi-Fi connectivity and a powerful SAMD21 microcontroller, making it suitable for small Matter devices.
+	          
+	      Arduino MKR WiFi 1010: With its low power consumption and robust Wi-Fi capabilities, it's excellent for battery-operated Matter devices.
+	          
+	      Arduino Portenta H7: This high-performance board with dual-core processor and multiple connectivity options is ideal for more complex Matter applications.
+	          
+	      Arduino Uno WiFi Rev2: An evolution of the classic Uno, this board adds Wi-Fi capability.
+	      
+	      ESP32-S3: While not an official Arduino board, the ESP32-S3 is widely used in the Arduino ecosystem and offers powerful processing capabilities, Wi-Fi and Bluetooth connectivity, and ample memory.
+	          
+	      These boards offer various combinations of processing power, connectivity, and memory, allowing developers to choose the most suitable option for their specific Matter IoT application
+	          
+	\item Web Assembly
+	      
+	      Web Assembly (Wasm) is a binary instruction format designed for efficient execution in web browsers. It serves as a portable target for compilation of high-level languages like C, C++, and Rust, enabling deployment on the web for client and server applications.
+	      
+	      Key features and benefits of Web Assembly in the context of IoT and Matter include:
+	          
+	      Language Versatility: Web Assembly allows developers to use languages like C, C++, or Rust in web environments. This is particularly beneficial for IoT applications, as these languages are commonly used in embedded systems development.
+	          
+	      Performance: Wasm provides near-native performance, making it suitable for computationally intensive tasks often required in IoT applications.
+	          
+	      Code Reusability: It enables the use of the same codebase across different platforms - from embedded devices to web interfaces. This is especially valuable for functions like encryption and decryption, where consistent implementation across platforms is crucial.
+	          
+	      Frontend Capabilities: Web Assembly empowers frontend applications to perform complex operations typically associated with backend or embedded environments. This can include data processing, encryption, and other intensive computations directly in the browser.
+	          
+	      In the context of Matter, Web Assembly can play a significant role in creating consistent, high-performance interfaces for controlling and managing IoT devices across different platforms. It allows developers to implement complex Matter protocol operations in web applications, maintaining consistency with the implementations on the devices themselves. This consistency across platforms is particularly valuable for ensuring that security measures, device interactions, and data handling are uniform across the entire Matter ecosystem.
+	          
 \end{enumerate}
 
+\section{Solution}
+
+write here ...
+
 \section{Requirements}
+
+\subsection{OutLine}
 The solution proposed in this study must meet the following key requirements:
 
-User-Friendliness: It should support a smooth transition for existing MATTER protocol users without forcing the use of a Matter hub, and provide an interface that end-users can easily set up and manage.
+User-Friendliness: The solution should facilitate a seamless transition for existing Matter protocol users without mandating the use of a Matter hub. It must offer an intuitive interface that end-users can effortlessly set up and manage, with clear documentation and guided processes for device onboarding, network configuration, and troubleshooting.
 
 Platform Independence: The solution should not be tied to any specific platform and should allow IoT devices from various manufacturers to interact seamlessly.
 
-Interoperability: It must maintain compatibility with the existing MATTER protocol while simultaneously supporting MATTER Tunnel.
+Interoperability: The solution must maintain full compatibility with the existing Matter protocol while concurrently supporting Matter Tunnel. It should provide backward compatibility for legacy devices and forward compatibility for future Matter protocol updates, ensuring a cohesive ecosystem that evolves without disrupting existing setups.
 
-Development Convenience: It should support MATTER Tunnel with minimal code changes to existing MATTER devices and provide a simple API that developers can easily understand and implement.
+Extended Operational Range: The solution should overcome the limitation of traditional Matter hub-based systems, which confine device operation to a home network. It must enable secure and efficient management and control of IoT devices from remote locations, expanding the utility of Matter-compatible devices beyond the immediate household environment. This extended range should not compromise security or user privacy.
+
+Real-time Performance: The solution must support real-time communication and responsiveness, even when utilizing blockchain technology. It should ensure that blockchain integration does not introduce significant latency or delays in device interactions. The system should maintain quick response times for user commands and device state updates, while leveraging the benefits of blockchain for enhanced security and decentralization.
 
 Enhanced End-to-End Encryption (E2EE): Complete E2EE should be guaranteed even outside private networks, maintaining data confidentiality throughout the entire communication process.
 
 User Privacy Protection: It should reduce reliance on centralized cloud services for communication and minimize the collection and use of user data while managing it transparently.
 
-By meeting these requirements, the proposed solution is expected to overcome the limitations of the current Matter hub-based MATTER protocol and provide a better user experience, security, and privacy.
+Development Convenience: It should support Matter Tunnel with minimal code changes to existing Matter devices and provide a simple API that developers can easily understand and implement.
+
+By meeting these requirements, the proposed solution is expected to overcome the limitations of the current Matter hub-based Matter protocol and provide a better user experience, security, and privacy.
+
+\subsection{Development Requirements}
+
+\begin{enumerate}[itemsep=2ex, parsep=1ex]
+	\item User Authentication
+	              
+	      The login system should prioritize security, simplicity, and compatibility with the Matter protocol. To achieve this, we propose implementing a login mechanism based on asymmetric cryptography, specifically using the secp256k1 elliptic curve algorithm, which is also employed by Matter. Users can easily log in by entering their secp256k1 private key instead of using social login methods.
+	              
+	      \begin{enumerate}[itemsep=2ex, parsep=1ex]
+	      	\item Sign Up
+	      	      
+	      	      Users can initiate the registration process by clicking the Sign Up button on the login page of the application. During the sign-up process, users will create their private key, which will serve as their unique identifier for logging in. Generated private key will be securely stored in local storage. If desired, users can retrieve their private key at any time from the application's account management section. This feature allows users to back up or transfer their private key to another device if needed.
+	      	      
+	      	\item Login
+	      	      
+	      	      Users can log in by entering their private key.
+	      	      Upon successful login, a public key is derived from the private key, and users are directed to a page where they can register Matter devices. If the entered key doesn't match the required format, an error message starting "Your key is incorrectly formatted" will be displayed.
+	      \end{enumerate}
+	              
+	\item Add Device
+	      
+	      To register a Matter-compatible device, the user clicks the ‘+’ button to add a new device. User can scan the QR code or enter the setup code provided by the device to proceed with the registration. The device information will be stored in the local storage. Once the device is successfully registered, the user gets registration confirmation message and will be directed to a screen displaying the device status and features.
+	              
+	\item Remove Device
+	      
+	      To remove an unnecessary device, the user select the device and click the ‘Remove’ button. The user will be prompted to confirm choice before the device is removed from the system. Upon confirming the removal, the system will delete the device from the local storage and the user will receive a message confirming the successful deregistration. If an error occurs during the process, an error message will be provided.
+	              
+	\item Device Control
+	      
+	      A user-friendly interface will be designed for controlling each device, focusing on intuitive navigation and clear functionality. The interface will display available control options. When the user issues a command to control a device, the command will be executed through communication with the blockchain and the device. Feedback will be provided to the user upon successsful command execution. User can set devices to operate automatically based on specific time or conditions. The application will allow users to configure and manage their automations.
+	      
+	\item Data Display
+	      
+	      Matter devices transmit a variety of signals to the application through the Matter Tunnel. These signals are structured in various formats to accommodate diverse data types and use cases. The formats include, but are not limited to, JSON, binary data. Each format serves a specific purpose, allowing for flexible and efficient data transmission.
+	      
+	      The application is responsible for processing these diverse signals and presenting them to users in a manner that aligns with their respective data formats. Upon receiving the signals, the application will parse and interpret the data to ensure it is accurately represented. The transformed data will then be displayed in a user-friendly and intuitive interface that enhances the overall user experience.
+	              
+	      The application will be designed to automatically update the user interface in real-time, reflecting any changes in the device status or incoming data. This ensures that users have access to the most current information available, allowing for informed decision-making and timely responses.
+	              
+	      By supporting various signal formats and providing a clear, interactive display, the application aims to enhance the usability and effectiveness of Matter devices within the connected ecosystem.
+	              
+\end{enumerate}
 
 \end{document}
-
-
