@@ -1,5 +1,5 @@
 %% Matter_Tunnel.tex
-%% 2024/11/28
+%% 2024/12/05
 %% by Dongwook Kim, Jisu Shin, Giram Park, Seoyoon Jung
 
 \documentclass[conference]{IEEEtran}
@@ -26,14 +26,10 @@
 	between IoT devices from various manufacturers, allowing control of multiple
 	brands of IoT devices from a single application. However, due to current
 	network constraints such as NAT and firewalls, a dedicated Matter hub is required
-	when using Matter devices. Matter Tunnel resolves the current limitations of
+	when using IoT devices. Matter Tunnel resolves the current limitations of
 	Matter by utilizing blockchain technology, operating as if creating a virtual
-	private network between applications and IoT devices. Primarily, it eliminates
-	the mandatory use of Matter hubs, significantly enhancing user experience
-	and flexibility. This innovation also extends the operational range of Matter
-	devices, allowing them to be placed and controlled beyond the confines of a
-	home. Users can easily manage devices in various environments such as home,
-	workspaces, and vehicles through a single application. From an enterprise
+	private network between applications and IoT devices. Primarily, it eliminates the mandatory use of Matter hubs, enhancing user experience and extending the operational range of IoT devices. This innovation also improves device functionality support, allowing them to support diverse and specialized device functionalities
+	beyond Matter's predefined device types. From an enterprise
 	perspective, all device interactions and transactions are permanently recorded
 	on the blockchain, providing businesses with reliable and immutable data for
 	tracking device usage patterns and extracting valuable operational insights.
@@ -67,11 +63,11 @@
 	\def\arraystretch{1.24} \small
 	\begin{tabular}{|p{1.8cm}|p{1.4cm}|p{4.4cm}|}
 		\hline
-		User, \par Customer, \par Front-end \par Developer & Jisu \par Shin    & From user and customer perspective, considers what features would enhance the IoT experience and how to improve user interaction. From a development perspective, designs and implements user interfaces for IoT applications, focusing on intuitive and responsive front-end solutions that integrate with Matter protocol and blockchain technology.                                                                                      \\
+		User, \par Customer, \par Front-end \par Developer & Jisu \par Shin    & From user and customer perspective, considers what features would enhance the IoT experience and how to improve user interaction. From a development perspective, designs and implements user interfaces for IoT applications, focusing on intuitive and responsive front-end solutions that integrate with Matter protocol and blockchain technology.                \\
 		\hline
-		User, \par Customer, \par Embedded \par Developer  & Giram \par Park   & From a user standpoint, evaluates how IoT devices can better serve everyday needs. As an Embedded developer, works on firmware and software for IoT devices compatible with the Matter protocol and proposed blockchain solution. Focuses on implementing user-centric features that enhance device functionality, improve reliability, and simplify setup processes.                                                                       \\
+		User, \par Customer, \par Embedded \par Developer  & Giram \par Park   & From a user standpoint, evaluates how IoT devices can better serve everyday needs. As an Embedded developer, works on firmware and software for IoT devices compatible with the Matter protocol and proposed blockchain solution. Focuses on implementing user-centric features that enhance device functionality, improve reliability, and simplify setup processes. \\
 		\hline
-		User, \par Customer, \par Front-end \par Developer & Seoyoon \par Jung & From user and customer perspective, considers what features would enhance the IoT experience and how to improve user interaction. From a development perspective, designs and implements user interfaces for IoT applications, focusing on intuitive and responsive front-end solutions that integrate with Matter protocol and blockchain technology. Aims to create user-friendly interfaces that simplify device control and management. \\
+		User, \par Customer, \par AI \par Developer        & Seoyoon \par Jung & From a user perspective, studies how AI can assist with corporate decision-making needs. As an AI Developer, develops machine learning solutions to help companies make better data-driven decisions. Focuses on building AI models that analyze business data and provide clear insights for management teams.                                                       \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -98,41 +94,41 @@ The current implementation of the Matter protocol presents the following key
 issues.
 \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	\item Mandatory use of Matter hubs
-	      	      
+	      	      	      
 	      Network limitations such as NAT and firewalls make direct P2P
 	      communication between IoT devices and applications challenging in typical
 	      households. This necessitates the use of dedicated Matter hubs.
-	      	      
+	      	      	      
 	\item Limited Operational Range
-	      	      
+	      	      	      
 	      As a consequence of the mandatory use of Matter hubs, the operational range
 	      of Matter is confined to the home. This limitation restricts the potential
 	      for broader IoT applications and remote device management beyond the
 	      immediate household environment.
-	      	      
+	      	      	      
 	\item Device Functionality Constraints
-	      	                  
-	      Matter protocol defines device types with predetermined functionality sets, limiting the execution of device-specific features. As modern IoT devices and appliances increasingly offer diverse and specialized functions, the protocol's standardized approach may prevent the utilization of unique or innovative device capabilities that fall outside the predefined Matter device types.
-	      	      
+	      	      	                  
+	      Matter protocol defines Matter Application Cluster Library (MACL), limiting the execution of device-specific features. As modern IoT devices and appliances increasingly offer diverse and specialized functions, the protocol's standardized approach may prevent the utilization of unique or innovative device capabilities that fall outside the predefined device types and MACL.
+	      	      	      
 	\item Platform Dependency
-	      	      
+	      	      	      
 	      The need for platform-specific solutions, such as Apple's `HomeKit' and `HomePod'
 	      or Google's `Google Home' and `Nest Hub', results in consumers being
 	      locked into particular platforms.
-	      	      
+	      	      	      
 	\item Limited End-to-End Encryption (E2EE)
-	      	      
+	      	      	      
 	      The advantage of E2EE in the Matter protocol is confined to operation
 	      within private networks, failing to ensure complete security throughout the
 	      entire communication process.
-	      	      
+	      	      	      
 	\item Threats to User Privacy
-	      	      
+	      	      	      
 	      The communication structure that routes through cloud services potentially
 	      threatens user privacy.
-	      	      
+	      	      	      
 	\item Centralized Authentication System
-	      	      
+	      	      	      
 	      Matter devices must be certified by a centralized root certificate
 	      authority (CA), which makes it difficult for small development teams to participate
 	      and limits consumer choices.
@@ -144,15 +140,15 @@ presents significant challenges for businesses.
 
 \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	\item Data Reliability and Trust Issues
-	      	      
+	      	      	      
 	      The centralized server architecture creates vulnerability in data
 	      integrity, making it challenging for businesses to maintain reliable records.
 	      Without an immutable ledger system, businesses cannot ensure the authenticity
 	      and accuracy of device interaction data, which is crucial for operation
 	      analysis and service improvement.
-	      	      
+	      	      	      
 	\item Data Analysis and Tracking Problems
-	      	      
+	      	      	      
 	      Traditional centralized IoT systems lack comprehensive data tracking
 	      mechanisms. This limitation makes it difficult for businesses to effectively
 	      analyze device usage patterns, maintain accurate maintenance histories, and
@@ -169,20 +165,20 @@ a solution utilizing blockchain technology to address these challenges.
 
 \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	\item Matter
-	      	      
+	      	      	      
 	      We use a variety of IoT devices, and several manufacturers develop and sell
 	      IoT devices with different names and appearances. It is Matter that
 	      enables these various smart home devices to be connected and managed at
 	      once.
-	      	      
+	      	      	      
 	      Matter is an IP-based smart home interworking standard that is compatible
 	      with all devices, designed to overcome the manufacturer-dependent limitations
 	      of smart home devices. It was launched in 2019 by four IoT giants Apple, Amazon,
 	      Google, Samsung SmartThings, and the global association CSA, formerly the Zigbee
 	      Alliance, and renamed Matter in 2021.
-	      	      
+	      	      	      
 	      Matter has the following technical features:
-	      	      
+	      	      	      
 	      Unlike existing ZigBee and Z-Wave, Matter operates based on IP protocols. Since
 	      Matter is based on IP, which is a network layer protocol, the communication
 	      protocol below it does not matter, and eventually all processing is done
@@ -192,7 +188,7 @@ a solution utilizing blockchain technology to address these challenges.
 	      together regardless of brands or supported transmission protocols. In addition,
 	      the reason why it is important to use IP is that IP protocols are already
 	      proven in the market in terms of interoperability and security.
-	      	      
+	      	      	      
 	      Matter is interoperable between devices. Matter allows each device to interact
 	      using the same protocol, even if it is from a different manufacturer. For example,
 	      Samsung Electronics' products have been linked to SmartThings, and LG
@@ -200,16 +196,16 @@ a solution utilizing blockchain technology to address these challenges.
 	      products can be connected to ThinQ. Matter is a very desirable standard from
 	      a user's point of view because most homes use a mixture of products from multiple
 	      brands.
-	      	      
+	      	      	      
 	      Matter supports both Wi-Fi and Thread, a low-power mesh network protocol, and
 	      supports various network protocols, such as using BLE in the device
 	      setting process.
-	      	      
+	      	      	      
 	      In addition, Matter has the characteristics of Multi-Admin, which uses the
 	      same device in conjunction with multiple platforms, AES authentication prescribed
 	      by NIST in the United States regarding data encryption, and PKI and
 	      certificates for device authentication.
-	      	      
+	      	      	      
 	      An open ecosystem is being created with the introduction of Matter with
 	      these characteristics, and the trend of automation and intelligence of residential
 	      environments is spreading through integration with Generative AI technology.
@@ -218,13 +214,13 @@ a solution utilizing blockchain technology to address these challenges.
 	      government is expanding policy support by promoting `AI@Home', a project
 	      centered on Matter and Generative AI, to support the creation of a smart home
 	      ecosystem.
-	      	      
+	      	      	      
 	      However, privacy protection, application of smart home technology of existing
 	      houses, and high installation costs are challenges that limit the growth
 	      of the market, so it is necessary to proactively prepare countermeasures.
-	      	      
+	      	      	      
 	\item Network Constraints in P2P Communication
-	      	      
+	      	      	      
 	      In a Peer-to-Peer (P2P) structure, there is minimal reliance on always-on infrastructure
 	      servers. Instead, the application allows pairs of intermittently connected
 	      hosts, called peers, to communicate directly with each other. Peers are
@@ -232,7 +228,7 @@ a solution utilizing blockchain technology to address these challenges.
 	      providers, and most peers are located in homes, universities, and offices.
 	      Since communication occurs directly between peers without passing through
 	      a specific server, this structure is referred to as Peer-to-Peer.
-	      	      
+	      	      	      
 	      Network constraints in P2P communication, particularly due to NAT (Network
 	      Address Translation) and firewalls, negatively impact user experience by introducing
 	      additional complexity. NAT, which is used to map private IP addresses to public
@@ -245,23 +241,23 @@ a solution utilizing blockchain technology to address these challenges.
 	      restrictions, allowing for direct communication between peers. These manual
 	      configurations can be challenging for users, ultimately affecting the
 	      overall user experience.
-	      	      
+	      	      	      
 	\item Matter Hub
-	      	      
+	      	      	      
 	      Matter Hub is a central component of the Matter ecosystem, designed to facilitate
 	      seamless communication and interoperability between smart home devices from
 	      various manufacturers. Matter aims to unify different smart home
 	      technologies, allowing devices to work together regardless of brand.
-	      	      
+	      	      	      
 	      Smart Home Hubs serve as central controllers for smart home devices,
 	      enabling communication between Matter-compatible devices from different
 	      manufacturers. Samsung SmartThings and Amazon Echo are representative examples.
-	      	      
+	      	      	      
 	      Matter Hubs connect Matter devices to the internet and other networks,
 	      allowing for remote access and control. Notable examples include Google Nest
 	      Hub, which integrates with Google services, and Apple HomePod, which
 	      utilizes Siri for voice commands.
-	      	      
+	      	      	      
 	      While Matter Hubs play a crucial role in enhancing interoperability within
 	      the smart home ecosystem, it's important to note that using Matter devices
 	      typically requires a home hub. Each application may dictate the specific
@@ -269,16 +265,16 @@ a solution utilizing blockchain technology to address these challenges.
 	      platforms. This limitation highlights the need for greater flexibility and
 	      broader compatibility in the Matter ecosystem to ensure a truly open and
 	      user-friendly IoT environment.
-	      	      
+	      	      	      
 	\item Blockchain
-	      	      
+	      	      	      
 	      To effectively integrate blockchain technology into the IoT industry, it is
 	      crucial to consider blockchains with high transaction processing speeds (TPS)
 	      and enterprise-friendly features.
-	      	      
+	      	      	      
 	      Several blockchain platforms stand out for their high TPS capabilities,
 	      including:
-	      	      
+	      	      	      
 	      Solana: Solana is an innovative platform designed for mainstream adoption.
 	      The core development team, including co-founder Anatoly Yakovenko, focused
 	      on scalability and efficiency based on their experience in building
@@ -286,12 +282,12 @@ a solution utilizing blockchain technology to address these challenges.
 	      of History (PoH), they achieved a throughput of up to 65,000 TPS and
 	      realized very low transaction fees (\$0.00025). It's also highly energy
 	      efficient, a single Solana transaction uses 0.00051 kWh.
-	      	      
+	      	      	      
 	      XRP: XRP (Ripple) uses the RPCA consensus algorithm and provides
 	      approximately 1,500 TPS throughput. Specialized in international remittance,
 	      it has established partnerships with many banks and financial institutions,
 	      featuring fast transaction completion times of 3-5 seconds.
-	      	      
+	      	      	      
 	      Hyperledger Fabric: Hyperledger Fabric is an enterprise blockchain
 	      platform that provides 2,000-20,000 TPS throughput. Through various network
 	      configurations, organizations can adjust the throughput and degree of
@@ -299,25 +295,25 @@ a solution utilizing blockchain technology to address these challenges.
 	      parameters such as the number of organizations, ordering service nodes,
 	      peer nodes, and channels, administrators can find the optimal balance
 	      between performance and decentralization.
-	      	      
+	      	      	      
 	      Among enterprise-friendly blockchain platforms, the following are noteworthy:
-	      	      
+	      	      	      
 	      Hyperledger Fabric: Hyperledger Fabric features a modular architecture and
 	      permissioned blockchain characteristics, supporting channel-based data partitioning.
 	      It has various enterprise use cases including supply chain management, asset
 	      tracking, identity management, and healthcare data management.
-	      	      
+	      	      	      
 	      Quorum: Quorum, developed by JP Morgan, is an enterprise blockchain based
 	      on Ethereum, featuring enhanced privacy features and high throughput. It
 	      supports private transactions, voting-based consensus mechanisms, role-based
 	      access control, and multi-signature contracts.
-	      	      
+	      	      	      
 	      Hyperledger Besu: Hyperledger Besu is a Java-based blockchain platform
 	      compatible with Ethereum. It supports both public and private networks and
 	      provides enterprise-grade governance. It is being utilized in various
 	      fields including financial services, supply chain management, digital
 	      asset management, and inter-enterprise collaboration platforms.
-	      	      
+	      	      	      
 	      After careful consideration of these options, Hyperledger Fabric is judged
 	      as the most suitable blockchain platform for the IoT industry. It offers a
 	      combination of high TPS and enterprise-grade features that are essential for
@@ -326,78 +322,78 @@ a solution utilizing blockchain technology to address these challenges.
 	      Hyperledger Fabric. This compatibility allows for seamless integration and
 	      immediate application in existing systems, potentially accelerating
 	      adoption and reducing implementation barriers.
-	      	      
+	      	      	      
 	\item Arduino
-	      	      
+	      	      	      
 	      Arduino is an open-source electronics platform based on easy-to-use
 	      hardware and software. In the context of Matter IoT, Arduino plays a
 	      significant role due to its flexibility, ease of use, and strong community
 	      support. When considering Arduino for Matter IoT applications, the
 	      following aspects are crucial:
-	      	      
+	      	      	      
 	      Processing power: Matter protocol requires sufficient computational resources
 	      to handle encryption and network communication.
-	      	      
+	      	      	      
 	      Connectivity options: Wi-Fi or Ethernet capability is essential for Matter,
 	      as it's IP-based.
-	      	      
+	      	      	      
 	      Memory capacity: Adequate RAM and flash memory to run Matter stack and
 	      application code.
-	      	      
+	      	      	      
 	      Power efficiency: For battery-operated IoT devices, low power consumption
 	      is critical.
-	      	      
+	      	      	      
 	      Compatibility with Matter SDK: The board should be capable of running the Matter
 	      SDK.
-	      	      
+	      	      	      
 	      Some Arduino boards suitable for Matter IoT projects include:
-	      	      
+	      	      	      
 	      Arduino Nano 33 IoT: This compact board features Wi-Fi connectivity and a
 	      powerful SAMD21 microcontroller, making it suitable for small Matter devices.
-	      	      
+	      	      	      
 	      Arduino MKR WiFi 1010: With its low power consumption and robust Wi-Fi
 	      capabilities, it's excellent for battery-operated Matter devices.
-	      	      
+	      	      	      
 	      Arduino Portenta H7: This high-performance board with dual-core processor
 	      and multiple connectivity options is ideal for more complex Matter
 	      applications.
-	      	      
+	      	      	      
 	      ESP32-S3: While not an official Arduino board, the ESP32-S3 is widely used
 	      in the Arduino ecosystem and offers powerful processing capabilities, Wi-Fi
 	      and Bluetooth connectivity, and ample memory.
-	      	      
+	      	      	      
 	      These boards offer various combinations of processing power, connectivity,
 	      and memory, allowing developers to choose the most suitable option for their
 	      specific Matter IoT application.
-	      	      
+	      	      	      
 	\item Web Assembly
-	      	      
+	      	      	      
 	      Web Assembly (Wasm) is a binary instruction format designed for efficient
 	      execution in web browsers. It serves as a portable target for compilation of
 	      high-level languages like C, C++, and Rust, enabling deployment on the web
 	      for client and server applications.
-	      	      
+	      	      	      
 	      Key features and benefits of Web Assembly in the context of IoT and Matter
 	      include:
-	      	      
+	      	      	      
 	      Language Versatility: Web Assembly allows developers to use languages like
 	      C, C++, or Rust in web environments. This is particularly beneficial for
 	      IoT applications, as these languages are commonly used in embedded systems
 	      development.
-	      	      
+	      	      	      
 	      Performance: Wasm provides near-native performance, making it suitable for
 	      computationally intensive tasks often required in IoT applications.
-	      	      
+	      	      	      
 	      Code Reusability: It enables the use of the same codebase across different
 	      platforms - from embedded devices to web interfaces. This is especially valuable
 	      for functions like encryption and decryption, where consistent
 	      implementation across platforms is crucial.
-	      	      
+	      	      	      
 	      Frontend Capabilities: Web Assembly empowers frontend applications to perform
 	      complex operations typically associated with backend or embedded environments.
 	      This can include data processing, encryption, and other intensive
 	      computations directly in the browser.
-	      	      
+	      	      	      
 	      In the context of Matter Tunnel, Web Assembly can play a significant role in
 	      creating consistent, high-performance interfaces for controlling and
 	      managing IoT devices across different platforms. It allows developers to implement
@@ -406,50 +402,50 @@ a solution utilizing blockchain technology to address these challenges.
 	      across platforms is particularly valuable for ensuring that security measures,
 	      device interactions, and data handling are uniform across the entire Matter
 	      ecosystem.
-	      	      
+	      	      	      
 	\item gRPC
-	      	      
+	      	      	      
 	      gRPC is a modern open source high performance Remote Procedure Call (RPC)
 	      framework that can run in any environment. It can efficiently connect services
 	      in and across data centers with pluggable support for load balancing,
 	      tracing, health checking and authentication.
-	      	      
+	      	      	      
 	      High Performance and Efficiency: gRPC is designed based on HTTP/2, allowing
 	      it to support features like multiplexing, server push, and streaming.
 	      These characteristics enable efficient management of connections between
 	      multiple clients and servers, minimizing latency and optimizing bandwidth.
 	      This ensures that high performance is maintained even in large-scale
 	      distributed systems.
-	      	      
+	      	      	      
 	      Protocol Buffers: gRPC uses Protocol Buffers for service definition.
 	      Protocol Buffers is a powerful binary serialization tool developed by
 	      Google, allowing the definition of data structures and their conversion into
 	      various programming languages. This increases the efficiency of data
 	      transmission and maintains consistency in APIs.
-	      	      
+	      	      	      
 	      Easy Installation and Scalability: gRPC offers simple installation,
 	      allowing developers to set up runtime and development environments with
 	      just a single command. It also provides scalability that can handle millions
 	      of RPCs per second, making it suitable for large-scale applications. This allows
 	      developers to quickly build and operate services without complex infrastructure
 	      setups.
-	      	      
+	      	      	      
 	      Cross-Language and Platform Support: gRPC works across multiple
 	      programming languages and platforms. It can automatically generate idiomatic
 	      client and server stubs for various languages such as Java, C++, Python,
 	      Go, and Ruby. This facilitates collaboration between teams using different
 	      tech stacks and enhances code reusability.
-	      	      
+	      	      	      
 	      Bi-Directional Streaming: gRPC supports bi-directional streaming between clients
 	      and servers. This allows clients to send data to the server while
 	      simultaneously receiving streamed data from the server. This feature is particularly
 	      useful in applications that require real-time data transmission.
-	      	      
+	      	      	      
 	      Integrated Authentication and Security: gRPC enhances security by
 	      integrating full pluggable authentication features at the HTTP/2 transport
 	      layer. This simplifies the implementation of user authentication and authorization,
 	      ensuring safe transmission of sensitive data.
-	      	      
+	      	      	      
 	      Due to these features, gRPC is widely used in various fields, including
 	      microservices architecture, IoT applications, and mobile backend services.
 	      By using gRPC, developers can build efficient and scalable systems, making
@@ -460,121 +456,121 @@ a solution utilizing blockchain technology to address these challenges.
 
 \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	\item Benefits of Blockchain for Data Mining
-	      	      
+	      	      	      
 	      The integration of blockchain technology and data mining techniques for anomaly detection provides efficient methods through their combined application. Data stored on the blockchain can be treated as big data, and data mining techniques enable the extraction of hidden patterns and insights.
-	      	      
+	      	      	      
 	      This paper explores analytical approaches to blockchain data and practical applications, demonstrating how these technologies enhance anomaly detection and fraud prevention. Blockchain's transparent recording system facilitates data tracking and monitoring. It serves as an effective tool for corporate data analysis, with a key advantage being rapid detection of operational changes or fraudulent activities.
-	      	      
+	      	      	      
 	      Key applications from the literature include:
-	      	      
+	      	      	      
 	      \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	      	\item Analysis of Bitcoin Transaction Networks
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      Zola et al. (2019) analyzed changes in Bitcoin transaction patterns by utilizing the time-series data of the blockchain. They used data from WalletExplorer and the Bitcoin mainnet over the past three years, calculating F1 scores through k-fold cross-testing. By analyzing the transaction data linked in chronological order on the blockchain, it is possible to detect cybersecurity threats and identify changes in behavioral patterns.
-	      	      	      	      
+	      	      	      	      	      	      
 	      	\item Blockchain Data Collection and Analysis
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      Brinckman et al. (2019) presented techniques for crawling, collecting, and analyzing blockchain data. They demonstrated a method for clustering transactions and extracting account characteristics to identify fraudulent accounts, which serves as a good example of understanding the data structure of the blockchain and effectively analyzing it.
-	      	      	      	      
+	      	      	      	      	      	      
 	      	\item Time-Series Transaction Data Analysis
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      Zhao et al. (2021) analyzed the entire dataset of the Ethereum blockchain from a temporal perspective. They utilized the ethereum blockchain dataset from the Bigquery Public Data Repository to examine changes in transaction patterns over time, comparing the accuracy of Random Forest and Logistic Regression, and visualizing the temporal evaluation of the collected data.
 	      \end{enumerate}
-	      	      
+	      	      	      
 	      These application examples demonstrate that effective analysis is possible by leveraging the connected data structure and temporal characteristics of the blockchain. In particular, the data structure of the blockchain can be effectively utilized to identify patterns in sensitive transaction data and detect anomalous behaviors, which can be considered a significant advantage of blockchain-based data analysis.
-	      	      
+	      	      	      
 	\item Benefits of Blockchain for Data Integrity and Accessibility
-	      	      
+	      	      	      
 	      Blockchain technology has emerged as an innovative solution in healthcare data management, addressing important challenges in data security, integrity, and interoperability. Here are three representative implementations that demonstrate the applications of blockchain in healthcare:
-	      	      
+	      	      	      
 	      \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	      	\item MedRec
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      MedRec is a blockchain project in healthcare that enables comprehensive management of medical data, including data provision by medical institutions, patient licensing, and data utilization by research institutes. MedRec 2.0 is implemented using Go-ethereum and Solidity languages, utilizing smart contracts on the Ethereum blockchain for intermediary-free data exchange. Like other blockchains, MedRec ensures security through its blockchain nature. Due to decentralization, data is maintained across all network nodes and stored in nodes of patients and their service providers. The blockchain's consensus mechanism prevents security issues from single-point vulnerabilities. Additionally, if one node attempts to modify a specific transaction in a block, that modified node becomes inconsistent with others and is excluded from consensus, maintaining record integrity.
-	      	      	      	      
+	      	      	      	      	      	      
 	      	\item Estonian e-Health
-	      	      	      	      
-	      	      The Estonian e-Health Foundation and Guardtime have strengthened security and patient monitoring by implementing KSI blockchain technology. The healthcare system integrates medical service data through X-Road, a data exchange platform, enabling comprehensive medical service data analysis. This system provides personal healthcare data integrity verification, with healthcare providers transmitting data integrity to the KSI server for permanent blockchain and offline recording. Through the "e-prescription service," doctors and pharmacies can verify prescription integrity. Additionally, the "electronic health registration service" allows doctors to access medical images like X-rays using only the patient's ID code. These systems enable secure storage, efficient sharing, and integrity verification of medical data.
-	      	      	      	      
+	      	      	      	      	      	      
+	      	      The Estonian e-Health Foundation and Guardtime have strengthened security and patient monitoring by implementing KSI blockchain technology. The healthcare system integrates medical service data through X-Road, a data exchange platform, enabling comprehensive medical service data analysis. This system provides personal healthcare data integrity verification, with healthcare providers transmitting data integrity to the KSI server for permanent blockchain and offline recording. Through the ``e-prescription service", doctors and pharmacies can verify prescription integrity. Additionally, the ``electronic health registration service" allows doctors to access medical images like X-rays using only the patient's ID code. These systems enable secure storage, efficient sharing, and integrity verification of medical data.
+	      	      	      	      	      	      
 	      	\item Mediblock
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      Mediblock is a blockchain-based integrated management platform for personal medical data that aims to integrate distributed patient medical data. Mediblock secures data by granting patients access to medical data and allowing only them to decrypt the entire data, while recording data hash values on the blockchain for integrity. It improves data reliability by restricting medical record creation to certified medical personnel, and ensures transparency by recording data access information and rights on the blockchain. Additionally, it enables safe data sharing through relay services and secondary backup storage, while facilitating secure data transactions through an encrypted data trading market within the platform.
 	      \end{enumerate}
-	      	      
+	      	      	      
 	      These implementations demonstrate how blockchain technology enhances healthcare data management through improved integrity, security, accessibility, and transparency. These advantages can be applied to blockchain-based Matter tunnels, potentially replacing Matter hubs to enhance the reliability and efficiency of the Matter protocol.
-	      	      
+	      	      	      
 	\item Hyperledger Fabric Performance
-	      	      
+	      	      	      
 	      The performance of Hyperledger Fabric is often questioned, particularly regarding
 	      transaction processing speeds (TPS) in comparison to other blockchain platforms.
 	      The performance of a Fabric network is complex due to the involvement of
 	      multiple organizations with varying hardware and networking
 	      infrastructures, as well as factors such as the number of channels and chaincode
 	      implementation.
-	      	      
+	      	      	      
 	      Hyperledger Fabric 2.x has introduced performance improvements over
 	      version1.4, which is no longer in long-term support (LTS). Fabric 2.5 is the
 	      latest LTS version and includes a new peer gateway service. This service, along
 	      with the new gateway SDK, is expected to enhance the performance of
 	      applications.
-	      	      
+	      	      	      
 	      \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	      	\item Hardware and Topology
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      In Hyperledger Fabric, the topology used consists of two peer organizations
 	      	      (PeerOrg0 and PeerOrg1), each with one peer node, along with a single ordering
 	      	      service organization (OrdererOrg0) that utilizes Raft consensus with one
 	      	      ordering service node. TLS is enabled on each node.
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      All nodes utilized the same hardware configuration:
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      - Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      - 40 Cores made up of 2 CPUs. Each CPU has 10 physical cores supporting
 	      	      20 Threads in total
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      - 64Gb Samsung 2933Mhx Memory
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      - MegaRAID Tri-Mode SAS3516 (MR9461-16i) disk controller
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      - Intel 730 and DC S35x0/3610/3700 Series SSD attached to disk
 	      	      controller
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      - Ethernet Controller X710/X557-AT 10GBASE-T
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      - Ubuntu 20.04
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      All machines were connected to the same switch. Hyperledger Fabric was
 	      	      deployed natively across three physical machines, meaning that the native
 	      	      binaries were installed and executed without using container technologies
 	      	      such as Docker or Kubernetes.
-	      	      	      	      
+	      	      	      	      	      	      
 	      	\item Hyperledger Fabric Application Configuration
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      State Database: LevelDB was used as the state database.
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      Gateway Service: The concurrency limit was set to 20,000.
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      Application Channel: A single application channel was created with two
 	      	      peers and an orderer, configured to use V1\_4 capabilities for lifecycle
 	      	      deployment while other capabilities were set to V2\_0.
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      Configuration: Only the application channel existed, no private data
 	      	      was used, and default policies applied. No range or JSON queries were
 	      	      conducted, and the network was TLS-enabled without mutual TLS.
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      Chaincode: Go chaincode (fixed-asset-base) was deployed without the
 	      	      Contract API, and an endorsement policy of “1 Of Any” was specified.
-	      	      	      	      
+	      	      	      	      	      	      
 	      	\item Load Generator
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      Hyperledger Caliper 0.5.0 served as both the load generator and for generating
 	      	      report outputs. It was configured to work with Fabric 2.4, utilizing the
 	      	      peer Gateway Service to initiate and assess transactions, with all
 	      	      transactions originating from a single organization directed to its
 	      	      gateway peer. The load was defined based on the fixed-asset benchmark from
 	      	      Hyperledger Caliper-Benchmarks.
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      Four bare-metal machines were employed to host remote Caliper workers and
 	      	      a single Caliper manager, which was responsible for generating the
 	      	      load on the Hyperledger Fabric network. To create sufficient workload on
@@ -582,45 +578,45 @@ a solution utilizing blockchain technology to address these challenges.
 	      	      to the number of clients currently connected to the network. The
 	      	      results section includes details on the number of Caliper workers
 	      	      utilized.
-	      	      	      	      
+	      	      	      	      	      	      
 	      	\item Key Points
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      The results presented here were generated using the latest builds of
 	      	      Hyperledger Fabric 2.5, employing the default node and channel configuration
 	      	      values. The block cutting parameters used were as follows:
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      \textit{Block Cut Time: 2 seconds}
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      \textit{Block Size: 500}
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      \textit{Preferred Maximum Bytes: 2 MB}
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      To avoid hitting concurrency limits while pushing enough workload
 	      	      through, the gateway concurrency limit was set to 20,000.
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      Only a single channel was utilized, meaning the peer did not leverage its
 	      	      full resource potential.
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      The chaincode was optimized for these tests, and real-world chaincode
 	      	      is expected to perform less efficiently.
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      The Caliper workload generator was also optimized for transaction
 	      	      throughput, whereas real-world applications would involve client implementations
 	      	      that may introduce latency.
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      Transactions were sent to a single gateway peer from the same organization;
 	      	      real-world scenarios would likely involve multiple organizations
 	      	      sending transactions concurrently, potentially leading to higher TPS results.
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      Using the gateway service allowed for better performance as blocks were
 	      	      not received via the delivery service to confirm transaction completion,
 	      	      enhancing both client and network performance compared to the legacy
 	      	      node SDK.
-	      	      
-	      	      \vspace{7cm}
 	      	      	      	      
+	      	      \clearpage
+	      	      	      	      	      	      
 	      	\item Result
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      \begin{table}[h!]
 	      	      	\caption{Hyperledger Fabric Benchmark Result}
 	      	      	\def\arraystretch{1.4} \small
@@ -638,53 +634,53 @@ a solution utilizing blockchain technology to address these challenges.
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	      	      	\item Blind Write of a Single Key 100 Byte Asset Size
-	      	      	      	      	      	      
+	      	      	      	      	      	      	      	      	      
 	      	      	      Caliper test configuration:
-	      	      	      	      	      	      
+	      	      	      	      	      	      	      	      	      
 	      	      	      - workers: 200
-	      	      	      	      	      	      
+	      	      	      	      	      	      	      	      	      
 	      	      	      - fixed-tps : 3000
-	      	      	      	      	      	      
+	      	      	      	      	      	      	      	      	      
 	      	      	      The TPS value represents the peak performance achieved during the tests.
 	      	      	      Attempts to exceed this throughput resulted in unexpected failures
 	      	      	      and a decrease in overall throughput.
-	      	      	      	      	      	      
+	      	      	      	      	      	      	      	      	      
 	      	      	\item Blind Write of a Single key 1000 Byte Asset Size
-	      	      	      	      	      	      
+	      	      	      	      	      	      	      	      	      
 	      	      	      Caliper test configuration:
-	      	      	      	      	      	      
+	      	      	      	      	      	      	      	      	      
 	      	      	      - workers: 200
-	      	      	      	      	      	      
+	      	      	      	      	      	      	      	      	      
 	      	      	      - fixed-tps : 3000
-	      	      	      	      	      	      
+	      	      	      	      	      	      	      	      	      
 	      	      	      The throughput remains the same as that observed with the 100-byte
 	      	      	      blind write benchmark; however, latency increases.
-	      	      	      	      	      	      
+	      	      	      	      	      	      	      	      	      
 	      	      	\item Read Write of a Single Key 100 Byte Asset Size
-	      	      	      	      	      	      
+	      	      	      	      	      	      	      	      	      
 	      	      	      Caliper test configuration:
-	      	      	      	      	      	      
+	      	      	      	      	      	      	      	      	      
 	      	      	      - workers: 200
-	      	      	      	      	      	      
+	      	      	      	      	      	      	      	      	      
 	      	      	      - fixed-tps, tps: 2550
-	      	      	      	      	      	      
+	      	      	      	      	      	      	      	      	      
 	      	      	      The above results were achieved under the expectation of no failures.
 	      	      	      The latency remained very low, indicating that the Fabric network was
 	      	      	      reaching its capacity during this test.
-	      	      	      	      	      	      
+	      	      	      	      	      	      	      	      	      
 	      	      	\item Read Write of a Single Key 1000 Byte Asset Size
-	      	      	      	      	      	      
+	      	      	      	      	      	      	      	      	      
 	      	      	      Caliper test configuration:
-	      	      	      	      	      	      
+	      	      	      	      	      	      	      	      	      
 	      	      	      - workers: 200
-	      	      	      	      	      	      
+	      	      	      	      	      	      	      	      	      
 	      	      	      - fixed-tps, tps: 1530
 	      	      \end{enumerate}
 	      \end{enumerate}
-	      	      
+	      	      	      
 	      The above results were achieved under the expectation of no failures. The
 	      latency remained very low, indicating that the Fabric network was reaching
 	      its capacity during this test.
@@ -697,28 +693,28 @@ The solution proposed in this study must meet the following key requirements
 
 \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	\item Eliminate the mandatory use of Matter Hubs
-	      	      
+	      	      	      
 	      It must eliminate the mandatory use of Matter Hubs, enabling direct and secure
 	      device-to-application communication without relying on intermediary hardware.
 	      This removal of hub dependency not only reduces system complexity and cost
 	      but also enhances system reliability by eliminating single points of
 	      failure.
-	      	      
+	      	      	      
 	\item Extended Operational Range
-	      	      
-	      The solution should overcome the limitation of traditional Matter Hub-based
+	      	      	      
+	      The solution should overcome the limitation of traditional Matter Hub based
 	      systems, which confine device operation to a home network. It must enable
 	      secure and efficient management and control of IoT devices from remote
 	      locations, expanding the utility of Matter-compatible devices beyond the immediate
 	      household environment. This extended range should not compromise security
 	      or user privacy.
-	      	      
+	      	      	      
 	\item Enhanced Device Functionality Support
-	      	                  
+	      	      	                  
 	      The solution must provide mechanisms to support diverse and specialized device functionalities beyond Matter's predefined device types. It should implement an expandable approach that allows manufacturers to define and integrate custom device capabilities. This enhancement enables the full utilization of modern IoT devices' innovative features without being constrained by standardized device type limitations, fostering technological advancement and product differentiation in the IoT ecosystem.
-	      	      
+	      	      	      
 	\item Enhanced data tracking mechanisms
-	      	      
+	      	      	      
 	      The solution must incorporate enhanced data tracking mechanisms that
 	      provide comprehensive visibility into device operations, interactions.
 	      This tracking system should maintain tamper-proof records of all device
@@ -726,9 +722,9 @@ The solution proposed in this study must meet the following key requirements
 	      performance metrics, and optimize their operations effectively. The
 	      implementation should support both real-time monitoring and historical
 	      data analysis while maintaining user privacy and data security.
-	      	      
+	      	      	      
 	\item Improved system reliability
-	      	      
+	      	      	      
 	      To ensure system reliability and trust, all data interactions and transactions
 	      must be recorded on an immutable ledger, creating a verifiable and
 	      transparent history of device operations. This trustworthy data foundation
@@ -736,36 +732,36 @@ The solution proposed in this study must meet the following key requirements
 	      allowing businesses to make data-driven decisions with confidence. The system
 	      should provide mechanisms for data verification and validation while maintaining
 	      appropriate access controls and privacy measures.
-	      	      
+	      	      	      
 	\item Decentralization
-	      	      
+	      	      	      
 	      The solution should embrace decentralization by removing dependencies on
 	      centralized certificate authorities (CAs) and platform-specific ecosystems.
 	      This decentralization should establish a more democratic and open IoT ecosystem
 	      where small developers and manufacturers can participate freely, fostering
 	      innovation and competition. Furthermore, the solution allow IoT devices
 	      from various manufacturers to interact seamlessly.
-	      	      
+	      	      	      
 	\item Enhanced End-to-End Encryption (E2EE)
-	      	      
+	      	      	      
 	      E2EE should be guaranteed even outside private networks, maintaining data confidentiality
 	      throughout the entire communication process.
-	      	      
+	      	      	      
 	\item User Privacy Protection
-	      	      
+	      	      	      
 	      It should reduce reliance on centralized cloud services for communication
 	      and minimize the collection and use of user data while managing it
 	      transparently.
-	      	      
+	      	      	      
 	\item Real-time Performance
-	      	      
+	      	      	      
 	      The solution must support real-time communication and responsiveness, even
 	      when utilizing blockchain technology. It should ensure that blockchain
 	      integration does not introduce significant latency or delays in device
 	      interactions. The system should maintain quick response times for user commands
 	      and device state updates, while leveraging the benefits of blockchain for
 	      enhanced security and decentralization.
-	      	                  
+	      	      	                  
 \end{enumerate}
             
 By meeting these requirements, the proposed solution is expected to overcome
@@ -776,17 +772,17 @@ a better user experience, security, and privacy.
 {\centering \textbf{Client} \par}
 \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	\item User Authentication
-	      	      
+	      	      	      
 	      The login system should prioritize security, simplicity, and compatibility
 	      with the Matter protocol. To achieve this, we propose implementing a login
 	      mechanism based on asymmetric cryptography, specifically using the secp256k1
 	      elliptic curve algorithm, which is also employed by Matter. Users can easily
 	      log in by entering their secp256k1 private key instead of using social login
 	      methods.
-	      	      
+	      	      	      
 	      \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	      	\item Sign Up
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      Users can initiate the registration process by clicking the Sign Up
 	      	      button on the login page of the application. During the sign-up process,
 	      	      users will create their private key, which will serve as their unique identifier
@@ -794,36 +790,36 @@ a better user experience, security, and privacy.
 	      	      storage. If desired, users can retrieve their private key at any time
 	      	      from the application's account management section. This feature allows
 	      	      users to back up or transfer their private key to another device if needed.
-	      	      	      	      
+	      	      	      	      	      	      
 	      	\item Login
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      Users can log in by entering their private key. Upon successful login,
 	      	      a public key is derived from the private key, and users are directed to
 	      	      a page where they can register Matter devices. If the entered key
 	      	      doesn't match the required format, an error message starting ``Your key
 	      	      is incorrectly formatted" will be displayed.
 	      \end{enumerate}
-	      	      
+	      	      	      
 	\item Add Device
-	      	      
+	      	      	      
 	      To register a Matter-compatible device, the user clicks the ‘+’ button to add
 	      a new device. User can scan the QR code or enter the setup code provided
 	      by the device to proceed with the registration. The device information will
 	      be stored in the local storage. Once the device is successfully registered,
 	      the user gets registration confirmation message and will be directed to a screen
 	      displaying the device status and features.
-	      	      
+	      	      	      
 	\item Remove Device
-	      	      
+	      	      	      
 	      To remove an unnecessary device, the user select the device and click the ‘Remove’
 	      button. The user will be prompted to confirm choice before the device is
 	      removed from the system. Upon confirming the removal, the system will
 	      delete the device from the local storage and the user will receive a
 	      message confirming the successful deregistration. If an error occurs during
 	      the process, an error message will be provided.
-	      	      
+	      	      	      
 	\item Device Control
-	      	      
+	      	      	      
 	      A user-friendly interface will be designed for controlling each device, focusing
 	      on intuitive navigation and clear functionality. The interface will
 	      display available control options. When the user issues a command to control
@@ -832,27 +828,27 @@ a better user experience, security, and privacy.
 	      command execution. User can set devices to operate automatically based on
 	      specific time or conditions. The application will allow users to configure
 	      and manage their automations.
-	      	      
+	      	      	      
 	\item Data Display
-	      	      
+	      	      	      
 	      Matter devices transmit a variety of signals to the application through
 	      the Matter Tunnel. These signals are structured in various formats to accommodate
 	      diverse data types and use cases. The formats include, but are not limited
 	      to, JSON, binary data. Each format serves a specific purpose, allowing for
 	      flexible and efficient data transmission.
-	      	      
+	      	      	      
 	      The application is responsible for processing these diverse signals and presenting
 	      them to users in a manner that aligns with their respective data formats.
 	      Upon receiving the signals, the application will parse and interpret the data
 	      to ensure it is accurately represented. The transformed data will then be
 	      displayed in a user-friendly and intuitive interface that enhances the
 	      overall user experience.
-	      	      
+	      	      	      
 	      The application will be designed to automatically update the user
 	      interface in real-time, reflecting any changes in the device status or incoming
 	      data. This ensures that users have access to the most current information
 	      available, allowing for informed decision-making and timely responses.
-	      	      
+	      	      	      
 	      By supporting various signal formats and providing a clear, interactive
 	      display, the application aims to enhance the usability and effectiveness of
 	      Matter devices within the connected ecosystem.
@@ -861,30 +857,30 @@ a better user experience, security, and privacy.
 {\centering \textbf{Dashboard} \par}
 \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	\item Integrated Dashboard
-	      	      
+	      	      	      
 	      The Integrated Dashboard provides a unified view of the status of all
 	      devices and the network. Through visual representations of real-time device
 	      statuses, transaction logs, and key metrics, users can monitor and
 	      understand system performance at a glance, enabling quick situation assessment.
-	      	      
+	      	      	      
 	\item Natural Language Query System
-	      	      
+	      	      	      
 	      The Natural Language Query System supports intuitive natural language
 	      input for querying blockchain data. The AI model converts user questions into
 	      precise data query commands, allowing users without programming knowledge
 	      to access and analyze blockchain data. This interface enhances accessibility,
 	      making data analysis easy for both technical and non-technical users.
-	      	      
+	      	      	      
 	\item Data Visualization and Analysis Tools
-	      	      
+	      	      	      
 	      Data Visualization and Analysis Tools improve the platform’s usability by
 	      presenting blockchain data results in accessible visual formats. Charts,
 	      graphs, and other visuals provide clear insights, while advanced analytics
 	      functionalities let users analyze transaction logs, and real-time performance
 	      indicators (KPIs) to generate meaningful insights for decision-making.
-	      	      
+	      	      	      
 	\item Insight and Report Service
-	      	      
+	      	      	      
 	      The Insight and Report Service features automatically generates daily, weekly,
 	      and monthly operational reports. These reports allow decision-makers to track
 	      performance trends, identify areas needing attention, and access actionable
@@ -898,14 +894,14 @@ a better user experience, security, and privacy.
 
 \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	\item JavaScript
-	      	              
+	      	      	              
 	      \begin{figure}[h!]
 	      	\centering
 	      	\includegraphics[width=0.5\linewidth]{javascript.png}
 	      	\caption{JavaScript}
 	      	\label{fig:JavaScript}
 	      \end{figure}
-	      	      
+	      	      	      
 	      JavaScript is a programming language used to make web pages dynamic, allowing
 	      for content changes in response to user interactions. It evolved from
 	      historically static web pages and is now utilized in both client-side and
@@ -923,18 +919,18 @@ a better user experience, security, and privacy.
 	      you are witnessing the effects of JavaScript in action. Its selection for this
 	      project is driven by the team's familiarity with it, which enhances
 	      efficiency and productivity.
-	      
+	      	      
 	      \vspace{5cm}
-	      	      
+	      	      	      
 	\item React
-	      	      
+	      	      	      
 	      \begin{figure}[h!]
 	      	\centering
 	      	\includegraphics[width=0.5\linewidth]{react.png}
 	      	\caption{React}
 	      	\label{fig:React}
 	      \end{figure}
-	      	      
+	      	      	      
 	      React is a JavaScript library developed by Facebook, primarily used for building
 	      user interfaces (UI). It has a component-based structure, allowing developers
 	      to create reusable components for UI construction. React uses a Virtual
@@ -943,16 +939,16 @@ a better user experience, security, and privacy.
 	      React for this project was influenced by the fact that the team conducted
 	      a study on React together during their vacation, enhancing their familiarity
 	      and readiness to implement it effectively.
-	      	      
+	      	      	      
 	\item Electron
-	      	      
+	      	      	      
 	      \begin{figure}[h!]
 	      	\centering
 	      	\includegraphics[width=0.5\linewidth]{electron.png}
 	      	\caption{Electron}
 	      	\label{fig:Electron}
 	      \end{figure}
-	      	      
+	      	      	      
 	      Electron is a framework for building desktop applications using JavaScript,
 	      HTML, and CSS. By embedding Chromium and Node.js into its binary, Electron
 	      enables developers to maintain a single JavaScript codebase and create
@@ -963,18 +959,18 @@ a better user experience, security, and privacy.
 	      which makes Electron a suitable choice for this project. This decision reflects
 	      the need for a robust and efficient local application to meet the project’s
 	      requirements.
-	      
+	      	      
 	      \vspace{5cm}
-	      	      
+	      	      	      
 	\item Go
-	      	      
+	      	      	      
 	      \begin{figure}[h!]
 	      	\centering
 	      	\includegraphics[width=0.5\linewidth]{go.png}
 	      	\caption{Go}
 	      	\label{fig:Go}
 	      \end{figure}
-	      	      
+	      	      	      
 	      Go (or Golang) is an open-source programming language developed by Google,
 	      designed to be fast and concise while supporting concurrency, making it
 	      ideal for network applications and server-side programming. Its straightforward
@@ -985,16 +981,16 @@ a better user experience, security, and privacy.
 	      is influenced by the requirement that Hyperledger Fabric must be developed
 	      using Go, ensuring compatibility and optimal performance within the
 	      blockchain framework.
-	      	      
+	      	      	      
 	\item gRPC
-	      	      
+	      	      	      
 	      \begin{figure}[h!]
 	      	\centering
 	      	\includegraphics[width=0.5\linewidth]{gRPC.png}
 	      	\caption{gRPC}
 	      	\label{fig:gRPC}
 	      \end{figure}
-	      	      
+	      	      	      
 	      gRPC is a high-performance, open-source Remote Procedure Call (RPC) framework
 	      initially developed by Google. It uses HTTP/2 for transport and Protocol
 	      Buffers as the interface description language, enabling efficient communication
@@ -1009,18 +1005,18 @@ a better user experience, security, and privacy.
 	      interact with the Hyperledger Fabric network through its gateway, gRPC provides
 	      the necessary protocol and tools to establish this communication efficiently
 	      and securely.
-	      
-	      \vspace{5cm}
-	                 
-	\item C++
 	      	      
+	      \vspace{5cm}
+	      	                 
+	\item C++
+	      	      	      
 	      \begin{figure}[h!]
 	      	\centering
 	      	\includegraphics[width=0.5\linewidth]{C++.png}
 	      	\caption{C++}
 	      	\label{fig:C++}
 	      \end{figure}
-	      	      
+	      	      	      
 	      C++ is a high-performance, object-oriented programming language developed by
 	      Bjarne Stroustrup as an extension of the C language. It is widely used in
 	      various applications, including game engines, system software, IoT,
@@ -1031,16 +1027,16 @@ a better user experience, security, and privacy.
 	      over system resources and memory. This project leverages C++ for building Arduino
 	      and WebAssembly applications, capitalizing on its efficiency and
 	      versatility in these domains.
-	      	      
+	      	      	      
 	\item Arduino
-	      	      
+	      	      	      
 	      \begin{figure}[h!]
 	      	\centering
 	      	\includegraphics[width=0.5\linewidth]{arduino.png}
 	      	\caption{Arduino}
 	      	\label{fig:Arduino}
 	      \end{figure}
-	      	      
+	      	      	      
 	      Arduino is an open-source electronics platform based on easy-to-use
 	      hardware and software, primarily used in IoT and embedded systems projects.
 	      Arduino boards can read inputs—such as light from a sensor, a finger press
@@ -1052,16 +1048,16 @@ a better user experience, security, and privacy.
 	      flexible and dynamic applications. Arduino was chosen for this project because
 	      it offers a simple way to develop embedded systems, streamlining the
 	      development process and enhancing efficiency.
-	      	      
+	      	      	      
 	\item Python
-	      	      
+	      	      	      
 	      \begin{figure}[h!]
 	      	\centering
 	      	\includegraphics[width=0.5\linewidth]{python.png}
 	      	\caption{Python}
 	      	\label{fig:Python}
 	      \end{figure}
-	      	      
+	      	      	      
 	      Python is a high-level programming language with concise and easy-to-read
 	      syntax. It is used in various fields, including data science, artificial intelligence,
 	      web development, automation, and scripting. Thanks to its rich libraries and
@@ -1069,16 +1065,16 @@ a better user experience, security, and privacy.
 	      development. In this project, Python is chosen specifically for AI
 	      development, leveraging its capabilities to create efficient and effective
 	      AI solutions.
-	      	      
+	      	      	      
 	\item Visual Studio Code
-	      	      
+	      	      	      
 	      \begin{figure}[h!]
 	      	\centering
 	      	\includegraphics[width=0.5\linewidth]{vscode.png}
 	      	\caption{VS Code}
 	      	\label{fig:VSCode}
 	      \end{figure}
-	      	      
+	      	      	      
 	      Visual Studio Code is a code editor redefined and optimized for building
 	      and debugging modern web and cloud applications. Developed by Microsoft,
 	      it is a free and open-source editor that supports a wide range of
@@ -1091,18 +1087,18 @@ a better user experience, security, and privacy.
 	      system. Visual Studio Code was chosen for this project because it is the
 	      most commonly used code editor, offering familiarity and reliability for efficient
 	      development
-	      
+	      	      
 	      \vspace{5cm}
-	      	      
+	      	      	      
 	\item GoLand
-	      	      
+	      	      	      
 	      \begin{figure}[h!]
 	      	\centering
 	      	\includegraphics[width=0.5\linewidth]{GoLand.png}
 	      	\caption{GoLand}
 	      	\label{fig:GoLand}
 	      \end{figure}
-	      	      
+	      	      	      
 	      GoLand is an integrated development environment (IDE) specifically
 	      designed for the Go programming language, developed by JetBrains. It
 	      offers smart code assistance with advanced code completion, navigation,
@@ -1117,32 +1113,32 @@ a better user experience, security, and privacy.
 	      GoLand was chosen for this project to facilitate the use of the Go
 	      programming language, providing the necessary tools and environment for optimal
 	      development.
-	      	      
+	      	      	      
 	\item LaTeX
-	      	      
+	      	      	      
 	      \begin{figure}[h!]
 	      	\centering
 	      	\includegraphics[width=0.5\linewidth]{LaTeX.png}
 	      	\caption{LaTeX}
 	      	\label{fig:LaTeX}
 	      \end{figure}
-	      	      
+	      	      	      
 	      LaTeX is a high-quality typesetting system. It includes features designed for
 	      the production of technical and scientific documentation. LaTeX is the de
 	      facto standard for the communication and publication of scientific
 	      documents.
-	      
+	      	      
 	      \vspace{5cm}
-	      	      
+	      	      	      
 	\item GitHub
-	      	      
+	      	      	      
 	      \begin{figure}[h!]
 	      	\centering
 	      	\includegraphics[width=0.5\linewidth]{GitHub.png}
 	      	\caption{GitHub}
 	      	\label{fig:GitHub}
 	      \end{figure}
-	      	      
+	      	      	      
 	      GitHub is a web-based platform that uses Git version control for managing
 	      and sharing code repositories. It enables developers to collaborate on projects
 	      by allowing them to track changes, manage branches, and resolve conflicts seamlessly.
@@ -1153,16 +1149,16 @@ a better user experience, security, and privacy.
 	      integration with various CI/CD tools and support for GitHub Actions enhances
 	      its capabilities, making it an essential tool for modern software
 	      development.
-	      	      
+	      	      	      
 	\item Notion
-	      	      
+	      	      	      
 	      \begin{figure}[h!]
 	      	\centering
 	      	\includegraphics[width=0.5\linewidth]{notion.png}
 	      	\caption{Notion}
 	      	\label{fig:Notion}
 	      \end{figure}
-	      	      
+	      	      	      
 	      Notion is an all-in-one workspace that combines note-taking, task management,
 	      databases, and collaboration tools, allowing teams to organize and share
 	      information effectively. With its flexible structure, users can create
@@ -1172,18 +1168,18 @@ a better user experience, security, and privacy.
 	      work dynamically. Additionally, its real-time collaboration features allow
 	      multiple users to edit and comment simultaneously, making it a powerful tool
 	      for project management and team communication.
-	      
-	      \vspace{5cm}
 	      	      
+	      \vspace{5cm}
+	      	      	      
 	\item macOS
-	      	              
+	      	      	              
 	      \begin{figure}[h!]
 	      	\centering
 	      	\includegraphics[width=0.5\linewidth]{mac-os.png}
 	      	\caption{macOS}
 	      	\label{fig:macOS}
 	      \end{figure}
-	      	      
+	      	      	      
 	      macOS is a widely used operating system for software development, known for
 	      its user-friendly interface and exceptional versatility. It equips
 	      developers with essential tools and integrated development environments (IDEs)
@@ -1243,7 +1239,7 @@ cloud cost.
 
 \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	\item ADEPT
-	      	      
+	      	      	      
 	      ADEPT, which stands for Autonomous Decentralized Peer-to-Peer Telemetry,
 	      is a blockchain platform designed for IoT devices that operates on a peer-to-peer
 	      basis. The idea behind ADEPT was introduced in 2015 as a result of collaboration
@@ -1253,9 +1249,9 @@ cloud cost.
 	      platform is being implemented in wearable technology and household appliances.
 	      For instance, Samsung's smart washing machine employs ADEPT technology to automatically
 	      order essential supplies, such as detergent, when they are running low.
-	      	      
+	      	      	      
 	\item IoT Chain
-	      	      
+	      	      	      
 	      IoT Chain operates on blockchain technology and incorporates various
 	      mechanisms like PBFT (Practical Byzantine Fault Tolerance), DAG (Directed
 	      Acyclic Graph), SPV (Simple Payment Verification), and CPS (Cyber Physical
@@ -1272,9 +1268,9 @@ cloud cost.
 	      overhead. IoT Chain finds applications in shared economies and smart home
 	      technologies. In November 2018, initiatives were launched to create a
 	      developer ecosystem, with plans to publicly release IoT Chain in December.
-	      	      
+	      	      	      
 	\item SLOCK.IT
-	      	      
+	      	      	      
 	      SLOCK.IT, a startup based in Germany, focuses on creating a sharing
 	      economy infrastructure utilizing Ethereum technology. They are in the process
 	      of developing the Universal Sharing Network, which integrates an automated
@@ -1284,9 +1280,9 @@ cloud cost.
 	      allowing users to unlock their assets for others by paying with tokens to
 	      execute Ethereum smart contracts. Additionally, users can control the keys
 	      required for transactions through a mobile application.
-	      	      
+	      	      	      
 	\item JD.COM
-	      	      
+	      	      	      
 	      JD.com offers blockchain gateway services, blockchain node services, and
 	      blockchain consensus network services. The platform utilizes a BFT-like consensus
 	      algorithm and employs an authentication protocol to manage the number of accesses
@@ -1310,7 +1306,7 @@ cloud cost.
 		\hline
 		Giram Park   & Embedded Development   \\
 		\hline
-		Seoyoon Jung & Front-end Development  \\
+		Seoyoon Jung & AI Development         \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -1321,32 +1317,32 @@ cloud cost.
 
 \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	\item Hub Elimination and Range Extension
-	      
+	      	      
 	      \begin{figure} [h!]
 	      	\centering
 	      	\includegraphics[width=0.8\linewidth]{blockchain_queue.png}
 	      	\caption{Blockchain Queue}
 	      	\label{fig:blockchain_queue}
 	      \end{figure}
-	      	      
+	      	      	      
 	      To eliminate the mandatory use of Matter Hubs and extend operational range,
 	      we propose replacing traditional Matter hubs and cloud services with Hyperledger          Fabric's chaincode functionality. This transformation fundamentally changes how Matter
 	      devices communicate and operate, freeing them from the physical constraints
 	      of home networks.
-	      	      
+	      	      	      
 	      The core of this solution lies in implementing a message queue system within
 	      the blockchain. Instead of relying on a physical hub for communication, each
 	      Matter device interacts with a dedicated queue in the blockchain. This
 	      queue serves as a virtual communication channel, enabling devices to operate
 	      beyond the traditional home network boundaries.
-	      	      
+	      	      	      
 	      \begin{figure}[h!]
 	      	\centering
-	      	\includegraphics[width=0.8\linewidth]{image.png}
+	      	\includegraphics[width=0.8\linewidth]{KeyValueBasedBlockchainQueue.png}
 	      	\caption{Key\-Value based Blockchain Queue}
 	      	\label{fig:KeyValueBasedBlockchainQueue}
 	      \end{figure}
-	      	      
+	      	      	      
 	      However, implementing a traditional queue structure in Hyperledger Fabric
 	      would be inefficient due to the complexity of transaction operations. Reading
 	      and writing to an array-based queue would require reading the entire array
@@ -1354,71 +1350,57 @@ cloud cost.
 	      we propose using a Key-Value Store structure where the key is formatted as
 	      \emph{devicePK-index} (device public key combined with a index) and
 	      the value contains the message payload.
-	      	      
+	      	      	      
 	      This architecture provides several advantages:
 	      \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	      	\item Eliminates the need for physical Matter hubs by virtualizing their
 	      	      functionality through blockchain
-	      	      	      	      
+	      	      	      	      	      	      
 	      	\item Enables device operation from any location with internet connectivity
-	      	      	      	      
+	      	      	      	      	      	      
 	      	\item Maintains secure and reliable communication through blockchain's inherent
 	      	      security features
-	      	      	      	      
+	      	      	      	      	      	      
 	      	\item Optimizes performance through efficient key-value based message handling
 	      \end{enumerate}
-	      	      
+	      	      	      
 	\item Protocol Flexibility and QR Code Innovation
-	      	      
-	      To support diverse device functionalities and provide greater flexibility, we innovate the protocol and QR code structure. Instead of relying on predefined function clusters in Matter protocol, our solution implements function definitions within QR codes, enabling dynamic functionality support.
-	      	      
+	      	      	      
+	      To support diverse device functionalities and provide greater flexibility, we innovate the protocol and QR code structure. Instead of relying on predefined application clusters in Matter protocol, our solution implements function definitions within QR codes, enabling dynamic functionality support.
+	      	      	      
 	      \begin{figure}[h!]
 	      	\centering
 	      	\includegraphics[width=0.9\linewidth]{MatterTunnelQRCode.png}
 	      	\caption{Matter Tunnel QR Code}
 	      	\label{fig:MatterTunnelQRCode}
 	      \end{figure}
-	      	      
+	      	      	      
 	      The QR code structure consists of three main components: a 33-byte public key (PK), a 16-byte passcode, and function definitions. Each function definition comprises an 18-byte function name and 2 bytes representing parameter and return value types. Matter Tunnel supports four basic types - void, string, number, and boolean - each represented by 2 bits. This efficient encoding allows for up to seven parameters and one return value within the 2-byte type definition.
-	      	      
+	      	      	      
 	      \begin{figure}[h!]
 	      	\centering
 	      	\includegraphics[width=1\linewidth]{MatterTunnelTX.png}
 	      	\caption{Matter Tunnel TX Format}
 	      	\label{fig:MatterTunnelTXFormat}
 	      \end{figure}
-	      	      
+	      	      	      
 	      The Matter Tunnel transaction format similarly reflects this flexibility, consisting of a 64-byte signature, 18-byte function name, 33-byte public key, 8-byte timestamp, and encrypted arguments. By including function names directly in the transaction format rather than using opcodes, the solution simplifies data analysis while maintaining extensibility. This approach effectively eliminates the constraints of Matter's predefined device types, allowing manufacturers to implement custom functionalities while ensuring seamless integration with the Matter ecosystem.
-	      	                  
+	      	      	                  
 	\item Data Analytics and System Reliability
-	      	      
-	      For enhanced data tracking and improved system reliability, we propose a revolutionary
-	      approach to data analytics and visualization that leverages blockchain's inherent
-	      advantages in data integrity and accessibility. Traditional IoT data
-	      analysis systems typically involve multiple intermediaries - data analysts
-	      processing raw data and relay servers transmitting processed information
-	      to decision-makers. This multi-step process introduces potential points of
-	      data corruption and creates opportunities for malicious administrators to compromise
-	      data integrity.
-	      	      
-	      Our solution implements a direct data access approach through a desktop application
-	      built with Electron, which connects directly to Hyperledger Fabric via
-	      gRPC. Additionally, the solution incorporates generative AI to transform
-	      natural language inputs into executable queries, enabling administrators without
-	      programming expertise to interact with and analyze raw data directly. This
-	      AI-powered query generation system allows non-technical users to extract
-	      meaningful insights from the blockchain data through intuitive language-based
-	      interactions.
-	      	      
-	      This approach significantly improves system reliability by ensuring that
-	      decision-makers work with authentic, unaltered data. The combination of
-	      blockchain's immutable data storage, direct access through gRPC, and AI-assisted
-	      query generation creates a powerful platform for data-driven decision
-	      making that maintains data integrity while being accessible to users
-	      regardless of their technical expertise.
-	      	      
+	      	      	      
+	      Our AI Dashboard revolutionizes how organizations interact with blockchain data by making complex data analysis accessible to everyone, regardless of their technical background. At its core, the system transforms everyday language questions into precise blockchain queries, allowing business managers, analysts, and decision-makers to extract valuable insights without writing a single line of code.
+	                
+	      For example, a business manager can simply ask ``Show transactions from \{src\_pk\} to \{pk\}" and the system automatically converts this natural language question into appropriate technical queries, handling all the complex filtering and data retrieval operations behind the scenes. This breakthrough eliminates the traditional requirement for programming expertise or specialized blockchain knowledge, democratizing access to critical data.
+	      
+	      The system achieves this through a sophisticated AI model trained on 5000 carefully crafted examples of natural language questions and their corresponding technical queries. To ensure the system understands a wide variety of ways people might ask questions, we implemented advanced language processing techniques that help the AI recognize different phrasings of the same question.
+	      
+	      This direct interaction approach revolutionizes data analytics by eliminating multiple intermediaries present in traditional systems. Conventional approaches require data analysts to process raw data and relay servers to transmit processed information, creating multiple points where data could be corrupted or manipulated by malicious actors. Each intermediary step not only introduces potential security vulnerabilities but also raises questions about data authenticity.
+	      
+	      By connecting directly to the blockchain through secure gRPC connections, our AI Dashboard completely eliminates these risks. Instead of trusting multiple intermediaries, users receive data straight from the blockchain itself, ensuring complete data authenticity. The system combines this direct access with natural language processing, allowing decision-makers to query blockchain data through simple conversations while maintaining the highest level of data integrity. Whether you're requesting transaction histories, analyzing device patterns, or monitoring system status, you can trust that the data you're viewing is exactly what's recorded on the blockchain - unaltered and authentic.
+	      
+	      	      	      
 	\item Decentralization
-	      	      
+	      	      	      
 	      Our approach to decentralization fundamentally reimagines the Matter
 	      protocol's architecture while maintaining its core benefits. Unlike the traditional
 	      Matter protocol that relies on a centralized Certificate Authority (CA) for
@@ -1426,31 +1408,31 @@ cloud cost.
 	      preserving protocol compatibility. By removing the centralized authentication
 	      system, we lower barriers to entry for device manufacturers and smaller
 	      development teams, fostering innovation and competition in the IoT ecosystem.
-	      	      
+	      	      	      
 	      This decentralized approach maintains the Matter protocol's ability to control
 	      multiple vendors' devices through a single application, ensuring that the key
 	      benefit of interoperability remains intact. The elimination of platform
 	      dependencies further enhances true decentralization, freeing users from vendor
 	      lock-in and creating a more open IoT environment.
-	      
-	      \vspace{7cm}
 	      	      
+	      \vspace{3cm}
+	      	      	      
 	\item Enhanced Security and Privacy Protection
-	      	      
+	      	      	      
 	      \begin{figure}[h!]
 	      	\centering
 	      	\includegraphics[width=1\linewidth]{TraditionalMatter.png}
 	      	\caption{Traditional Matter}
 	      	\label{fig:TraditionalMatter}
 	      \end{figure}
-	      	      
+	      	      	      
 	      \begin{figure}[h!]
 	      	\centering
 	      	\includegraphics[width=0.8\linewidth]{Matter Tunnel E2EE.png}
 	      	\caption{Matter Tunnel E2EE}
 	      	\label{fig:MatterTunnelE2EE}
 	      \end{figure}
-	      	      
+	      	      	      
 	      Our solution significantly enhances End-to-End Encryption (E2EE) and user
 	      privacy protection by fundamentally restructuring the communication
 	      architecture of Matter devices. Traditional Matter implementations rely on
@@ -1458,29 +1440,29 @@ cloud cost.
 	      services, and Matter hubs poll these services for updates. This structure inherently
 	      compromises both E2EE and privacy. Matter Tunnel addresses these
 	      limitations through a blockchain-based approach.
-	      	      
+	      	      	      
 	      Key Security and Privacy Enhancements:
-	      	      
+	      	      	      
 	      \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	      	\item Direct Blockchain Communication
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      By eliminating cloud service intermediaries, this system enables direct
 	      	      and encrypted communication between applications and devices. The
 	      	      removal of vulnerable points in the communication chain enhances
 	      	      security, while ensuring true end-to-end encryption throughout the entire
 	      	      process.
-	      	      	      	      
+	      	      	      	      	      	      
 	      	\item Enhanced Privacy Protection
-	      	      	      	      
+	      	      	      	      	      	      
 	      	      This system maintains privacy by only exposing device public keys on
 	      	      the blockchain, while keeping sensitive information like IP addresses and
 	      	      location data completely private. This approach enables anonymous
 	      	      device operation, significantly reducing the attack surface for potential
 	      	      privacy breaches.
-	      	      	      	      
+	      	      	      	      	      	      
 	      	\item Secure Device Registration and Authentication
-	      	      	      	                      
-	      	      The system implements a robust security mechanism through a predefined `regist' 
+	      	      	      	      	      	                      
+	      	      The system implements a robust security mechanism through a predefined `register' 
 	      	      function on the blockchain where users must verify device ownership by providing 
 	      	      the correct 128-bit passcode. This establishes a secure transaction relationship 
 	      	      between the user and device. With the passcode's substantial bit length, the 
@@ -1489,20 +1471,20 @@ cloud cost.
 	      	      This approach creates an inherently secure system that prevents attacks 
 	      	      by design rather than through reactive measures.
 	      \end{enumerate}
-	      	      
+	      	      	      
 	      By leveraging blockchain technology and existing Matter security features,
 	      our solution creates a more robust and private IoT ecosystem. The combination
 	      of anonymous operation, secure message counting, and direct blockchain communication
 	      ensures that both E2EE and user privacy are maintained at the highest possible
 	      level.
-	      	      
+	      	      	      
 	\item Real-Time Performance with Hyperledger Fabric
-	      	      
+	      	      	      
 	      To ensure real-time performance in Matter Tunnel, we carefully selected Hyperledger
 	      Fabric as our blockchain platform after extensive evaluation of various options.
 	      This choice was driven by Hyperledger Fabric's unique characteristics that
 	      align with the real-time requirements of IoT device communication.
-	      	      
+	      	      	      
 	      Hyperledger Fabric's high transaction processing capability stands out as
 	      a crucial feature for our implementation, supporting 2,000-20,000 transactions
 	      per second (TPS). This throughput is achieved through multiple channels
@@ -1513,7 +1495,7 @@ cloud cost.
 	      time, supporting custom channel configurations for different device groups,
 	      and permitting fine-tuning of consensus mechanisms to match specific use case
 	      requirements.
-	      	      
+	      	      	      
 	      By leveraging Hyperledger Fabric's comprehensive capabilities, Matter
 	      Tunnel achieves the real-time performance necessary for effective IoT
 	      device control and monitoring. The platform's ability to handle high transaction
@@ -1522,11 +1504,28 @@ cloud cost.
 	      applications.
 \end{enumerate}
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1\linewidth]{comunicationOverview.png}
+	\caption{Matter Tunnel Communication Overview}
+	\label{fig:MatterTunnelCommunicationOverview}
+\end{figure}
+
 \subsection{Development Requirements Specifications}
+\vspace{0.5cm}
 {\centering \textbf{Client} \par}
+\vspace{0.5cm}
 
 \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	\item Entry \& Tutorial
+	      
+	      \begin{figure}[h!]
+	      	\centering
+	      	\includegraphics[width=0.5\linewidth]{MatterTunnelEntry.png}
+	      	\caption{Entry}
+	      	\label{fig:MatterTunnelEntry}
+	      \end{figure}
+          
 	      \begin{table}[h!]
 	      	\def\arraystretch{1.24} \small
 	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
@@ -1538,6 +1537,13 @@ cloud cost.
 	      	\end{tabular}
 	      \end{table}
 	      
+	      \begin{figure}[h!]
+	      	\centering
+	      	\includegraphics[width=1\linewidth]{MatterTunnelTutorial.png}
+	      	\caption{Tutorials}
+	      	\label{fig:MatterTunnelTutorials}
+	      \end{figure}
+	                
 	      \begin{table}[h!]
 	      	\def\arraystretch{1.24} \small
 	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
@@ -1548,7 +1554,16 @@ cloud cost.
 	      		\hline
 	      	\end{tabular}
 	      \end{table}
-	          
+	      
+            \clearpage
+          
+	      \begin{figure}[h!]
+	      	\centering
+	      	\includegraphics[width=1\linewidth]{MatterTunnelTutorialButtons.png}
+	      	\caption{Tutorial Buttons}
+	      	\label{fig:MatterTunnelTutorialButtons}
+	      \end{figure}
+	      	          
 	      \begin{table}[h!]
 	      	\def\arraystretch{1.24} \small
 	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
@@ -1562,13 +1577,13 @@ cloud cost.
 	      		005 & MatterTunnel-Tutorial-NavigateToLogin & A component that appears on the final tutorial page, directing users to transition from the tutorial completion to the login page. This represents the end of the tutorial flow and the beginning of the actual application usage.                  \\
 	      		\hline
 	      	\end{tabular}
-	      \end{table}
-	      
-	      \vspace{5cm}
-	      
+	      \end{table} 
+    
 	\item Authentication
 	      \begin{enumerate}[itemsep=2ex, parsep=1ex]
+	      	          
 	      	\item Login
+            
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
@@ -1579,68 +1594,119 @@ cloud cost.
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
+
+                  \begin{figure}[h!]
+	      		\centering
+	      		\includegraphics[width=0.75\linewidth]{MatterTunnelLogin.png}
+	      		\caption{Login Page}
+	      		\label{fig:enter-label}
+	      	\end{figure}
 	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.75\linewidth]{MatterTunnelLoginError.png}
+	      	      	\caption{Login Error}
+	      	      	\label{fig:MatterTunnelLoginError}
+	      	      \end{figure}
+	      	      	      	      
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
 	      	      		\hline
-	      	      		ID  & Name                     & Description                                                                                                                                                                                                                                                                                                                 \\
+	      	      		ID  & Name                     & Description                                                                                                                                                                                                                                                                                                                \\
 	      	      		\hline
-	      	      		007 & MatterTunnel-Login-Error & The system must validate user input during login. Both when the input field is empty and when the key does not match the required format (exactly 64 hexadecimal characters using 0-9 and A-F, pattern: \verb|/^[0-9a-fA-F]{64}$/|), display the error message ``Your key is incorrectly formatted'' below the input field. \\ \\
+	      	      		007 & MatterTunnel-Login-Error & The system must validate user input during login. Both when the input field is empty and when the key does not match the required format (exactly 64 hexadecimal characters using 0-9 and A-F, pattern: \verb|/^[0-9a-fA-F]{64}$/|), display the error message ``Your key is incorrectly formatted" below the input field. \\ \\
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
-	      	      
-	      	      \vspace{10cm}
-	      	      
+	      	      	      	      
+	      	      \clearpage
+	      	      	      	      
 	      	\item SignUp
+	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.75\linewidth]{MatterTunnelSignUpInitial.png}
+	      	      	\caption{SignUp Initial}
+	      	      	\label{fig:MatterTunnelSignUpInitial}
+	      	      \end{figure}
+	      	                  
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
 	      	      		\hline
-	      	      		ID  & Name                        & Description                                                                                                                                                                                                                                                                                                                                                                   \\
+	      	      		ID  & Name                        & Description                                                                                                                                                                                                                                                                                                                                                                    \\
 	      	      		\hline
-	      	      		008 & MatterTunnel-SignUp-Initial & Upon accessing the Sign-Up box under the Login section, users are presented with an initial prompt encouraging them to register if they are not yet members. The "Sign Up" button is displayed, inviting users to start the sign-up process. This component serves to inform users that they can proceed to registration to enjoy the features of the Matter Tunnel platform. \\
+	      	      		008 & MatterTunnel-SignUp-Initial & Upon accessing the Sign-Up box under the Login section, users are presented with an initial prompt encouraging them to register if they are not yet members. The ``Sign Up" button is displayed, inviting users to start the sign-up process. This component serves to inform users that they can proceed to registration to enjoy the features of the Matter Tunnel platform. \\
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
 	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.75\linewidth]{MatterTunnelSignUpPrivateKey.png}
+	      	      	\caption{SignUp PrivateKey}
+	      	      	\label{fig:MatterTunnelSignUpPrivateKey}
+	      	      \end{figure}
+	      	                        
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
 	      	      		\hline
-	      	      		ID  & Name                           & Description                                                                                                                                                                                                                                                                                                                          \\
+	      	      		ID  & Name                           & Description                                                                                                                                                                                                                                                                                                                           \\
 	      	      		\hline
-	      	      		009 & MatterTunnel-SignUp-PrivateKey & After clicking the "Sign Up" button, users are directed to a screen where a private key is generated for them. This key is shown in a 64-character hexadecimal format, ensuring its precision and security. The private key is crucial for the user's future access to Matter Tunnel, and users are encouraged to store it securely. \\
+	      	      		009 & MatterTunnel-SignUp-PrivateKey & After clicking the ``Sign Up" button, users are directed to a screen where a private key is generated for them. This key is shown in a 64-character hexadecimal format, ensuring its precision and security. The private key is crucial for the user's future access to Matter Tunnel, and users are encouraged to store it securely. \\
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
 	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.8\linewidth]{MatterTunnelSignUpCompletion.png}
+	      	      	\caption{SignUp Completion}
+	      	      	\label{fig:MatterTunnelSignUpCompletion}
+	      	      \end{figure}
+	      	                        
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
 	      	      		\hline
-	      	      		ID  & Name                           & Description                                                                                                                                                                                                                                                                                                                                                             \\
+	      	      		ID  & Name                           & Description                                                                                                                                                                                                                                                                                                                                                               \\
 	      	      		\hline
-	      	      		010 & MatterTunnel-SignUp-Completion & Once the "Sign Up" button is pressed, the private key is generated and displayed on the screen. Simultaneously, a "Sign Up Completed" message appears, indicating that the registration process has been successfully completed. This stage reassures the user that they are now fully registered and ready to proceed to the next steps in the Matter Tunnel platform. \\
+	      	      		010 & MatterTunnel-SignUp-Completion & Once the ``Sign Up" button is pressed, the private key is generated and displayed on the screen. Simultaneously, a ``Sign Up Completed" message appears, indicating that the registration process has been successfully completed. This stage reassures the user that they are now fully registered and ready to proceed to the next steps in the Matter Tunnel platform. \\
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
 	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.8\linewidth]{MatterTunnelSignUpCopy.png}
+	      	      	\caption{Matter Tunnel SignUp Copy}
+	      	      	\label{fig:MatterTunnelSignUpCopy}
+	      	      \end{figure}
+	      	      	      	      
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
 	      	      		\hline
-	      	      		ID  & Name                     & Description                                                                                                                                                                                                                                                                                                             \\
+	      	      		ID  & Name                     & Description                                                                                                                                                                                                                                                                                                              \\
 	      	      		\hline
-	      	      		011 & MatterTunnel-SignUp-Copy & This component allows users to copy their generated private key by clicking the "Copy" button. A confirmation message is displayed once the key is successfully copied to the clipboard, ensuring that users can easily save their credentials for future use and proceed with logging into the Matter Tunnel platform. \\
+	      	      		011 & MatterTunnel-SignUp-Copy & This component allows users to copy their generated private key by clicking the ``Copy" button. A confirmation message is displayed once the key is successfully copied to the clipboard, ensuring that users can easily save their credentials for future use and proceed with logging into the Matter Tunnel platform. \\
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
-	      	      
-	      	      \vspace{5cm}
-	      	      
+	      	      	      	      
+	      	      \clearpage
+	      	      	      	      
 	      	\item Account Management
+	      	                  
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.75\linewidth]{MatterTunnelAccountPrivateKey.png}
+	      	      	\caption{Account PrivateKey}
+	      	      	\label{fig:MatterTunnelAccountPrivateKey}
+	      	      \end{figure}
+	      	                  
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
@@ -1651,35 +1717,61 @@ cloud cost.
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
-	      	      
+
+                  \vspace{30cm}
+	      	                        
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.75\linewidth]{MatterTunnelAccountCopyButton.png}
+	      	      	\caption{Account Copy Button}
+	      	      	\label{fig:MatterTunnelAccountCopyButton}
+	      	      \end{figure}
+	      	      	      	      
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
 	      	      		\hline
-	      	      		ID  & Name                            & Description                                                                                                                                                                                                                                                                                                                                     \\
+	      	      		ID  & Name                            & Description                                                                                                                                                                                                                                                                                                                                       \\
 	      	      		\hline
-	      	      		013 & MatterTunnel-Account-CopyButton & A "Copy Private Key" button is provided below the private key. When users click the button, the private key is copied to their clipboard. After the action is completed, an alert message "Private key copied" appears at the top of the screen, confirming that the key has been successfully copied and can be securely stored for later use. \\
+	      	      		013 & MatterTunnel-Account-CopyButton & A ``Copy Private Key" button is provided below the private key. When users click the button, the private key is copied to their clipboard. After the action is completed, an alert message ``Private key copied" appears at the top of the screen, confirming that the key has been successfully copied and can be securely stored for later use. \\
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
+
+                  \vspace{5cm}
 	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.75\linewidth]{MatterTunnelAccountLogoutButton.png}
+	      	      	\caption{Account Logout Button}
+	      	      	\label{fig:MatterTunnelAccountLogoutButton}
+	      	      \end{figure}
+	      	      	      	      
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
 	      	      		\hline
-	      	      		ID  & Name                              & Description                                                                                                                                                                                                                                                                                        \\
+	      	      		ID  & Name                              & Description                                                                                                                                                                                                                                                                                           \\
 	      	      		\hline
-	      	      		014 & MatterTunnel-Account-LogoutButton & The "Logout" button allows users to exit their current session. When clicked, the system logs the user out and redirects them to the Login page. Upon successful logout, a "Logout Completed" message appears below the "Login" button, confirming that the user has been successfully logged out. \\
+	      	      		014 & MatterTunnel-Account-LogoutButton & The ``Logout" button allows users to exit their current session. When clicked, the system logs the user out and redirects them to the Login page. Upon successful logout, a ``Logout Completed" message appears below the ``Login" button, confirming that the user has been successfully logged out. \\
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
 	      \end{enumerate}
-	      
-	      \vspace{10cm}
-	      
+
+            \clearpage
+	      	      
 	\item Main Interface
 	      \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	      	\item Device list
+	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=1\linewidth]{MatterTunnelDeviceList.png}
+	      	      	\caption{Device List}
+	      	      	\label{fig:MatterTunnelDeviceList}
+	      	      \end{figure}
+	      	                  
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
@@ -1690,7 +1782,16 @@ cloud cost.
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
+
+                  \vspace{7cm}
 	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.25\linewidth]{MatterTunnelNavigateToDeviceAdditionButton.png}
+	      	      	\caption{Navigate To Device Addition Button}
+	      	      	\label{fig:MatterTunnelNavigateToDeviceAdditionButton}
+	      	      \end{figure}
+	      	                        
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
@@ -1702,6 +1803,13 @@ cloud cost.
 	      	      	\end{tabular}
 	      	      \end{table}
 	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.25\linewidth]{MatterTunnelNavigateToDeviceDeletionButton.png}
+	      	      	\caption{Navigate To Device Deletion Button}
+	      	      	\label{fig:MatterTunnelNavigateToDeviceDeletionButton}
+	      	      \end{figure}
+	      	      	      	      
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
@@ -1712,9 +1820,16 @@ cloud cost.
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
-	      	      
+	      	      	      	      
 	      	      \vspace{10cm}
 	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.5\linewidth]{MatterTunnelDeviceComponent.png}
+	      	      	\caption{Device Component}
+	      	      	\label{fig:enter-label}
+	      	      \end{figure}
+	      	      	      	      
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
@@ -1727,7 +1842,16 @@ cloud cost.
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
-	      	      
+                  
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=1\linewidth]{MatterTunnelNavigationBar.png}
+	      	      	\caption{Matter Tunnel Navigation Bar}
+	      	      	\label{fig:enter-label}
+	      	      \end{figure}
+
+                  \vspace{10cm}
+	      	      	      	      
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
@@ -1738,99 +1862,200 @@ cloud cost.
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
-	      	      
+	      	      	      	      
 	      	\item Device addition
+	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.7\linewidth]{MatterTunnelDeviceAdditionScreen.png}
+	      	      	\caption{Device Addition Screen}
+	      	      	\label{fig:DeviceAdditionScreen}
+	      	      \end{figure}
+
+                  \clearpage
+	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.75\linewidth]{MatterTunnelDeviceAdditionScreenComplete.png}
+	      	      	\caption{Device Addition Complete Screen}
+	      	      	\label{fig:DeviceAdditionCompleteScreen}
+	      	      \end{figure}
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
 	      	      		\hline
-	      	      		ID  & Name                              & Description                                                                                                                                                                                                                                                                                              \\
+	      	      		ID  & Name                              & Description                                                                                                                                                                                                                                                                                               \\
 	      	      		\hline
-	      	      		021 & MatterTunnel-DeviceAdditionScreen & This component displays the Device Addition screen, which allows users to add a new device to their account. When the "+" button on the Device List screen is clicked, the user is navigated to this screen, where they can scan a QR code and enter a name for the device to complete the registration. \\
+	      	      		021 & MatterTunnel-DeviceAddition Screen & This component displays the Device Addition screen, which allows users to add a new device to their account. When the ``+" button on the Device List screen is clicked, the user is navigated to this screen, where they can scan a QR code and enter a name for the device to complete the registration. \\
+	      	      		\hline
+	      	      	\end{tabular}
+	      	      \end{table}
+
+                  \vspace{5cm}
+	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.7\linewidth]{MatterTunnelDeviceQRScanScreen.png}
+	      	      	\caption{Device QR Scan Screen}
+	      	      	\label{fig:DeviceQRScanScreen}
+	      	      \end{figure}
+	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.8\linewidth]{MatterTunnelDeviceQRScanScreenError.png}
+	      	      	\caption{Device QR Scan Screen Error}
+	      	      	\label{fig:MatterTunnelDeviceQRScanScreenError}
+	      	      \end{figure}
+	      	                        
+	      	      \begin{table}[h!]
+	      	      	\def\arraystretch{1.24} \small
+	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
+	      	      		\hline
+	      	      		ID  & Name                            & Description                                                                                                                                                                                                                                                                                                                                                                                                                                                             \\
+	      	      		\hline
+	      	      		022 & MatterTunnel-DeviceQRScan Screen & This screen is displayed for users to scan a QR code for adding a device. Once the QR code is successfully scanned, the screen changes to black, and a message “QR Code Scan Complete!” appears. “Scan again” button is also available at the bottom of the screen, allowing users to scan a new QR code if needed. If the QR code has already been scanned and the device is already registered, an alert message appears saying ``Already Registered Device!" \\
+	      	      		\hline
+	      	      	\end{tabular}
+	      	      \end{table}
+
+                  \clearpage
+	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.75\linewidth]{MatterTunnelDeviceNameInput.png}
+	      	      	\caption{Device Name Input}
+	      	      	\label{fig:MatterTunnelDeviceNameInput}
+	      	      \end{figure}
+	      	      	      	      
+	      	      \begin{table}[h!]
+	      	      	\def\arraystretch{1.24} \small
+	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
+	      	      		\hline
+	      	      		ID  & Name                         & Description                                                                                                                                                                                                                                                           \\
+	      	      		\hline
+	      	      		023 & MatterTunnel-DeviceNameInput & After successfully scanning a QR code, this input field allows users to name the device. The input field becomes active, enabling users to assign a unique name to the device they are registering. Once the name is entered, the ``Register" button will be enabled. \\
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
 	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.75\linewidth]{MatterTunnelDeviceRegisterButton.png}
+	      	      	\caption{Device Register Button}
+	      	      	\label{fig:MatterTunnelDeviceRegisterButton}
+	      	      \end{figure}
+	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.8\linewidth]{MatterTunnelDeviceRegisterButtonAlert.png}
+	      	      	\caption{Device Register Alert}
+	      	      	\label{fig:DeviceRegisterAlert}
+	      	      \end{figure}
+	      	      	      	      
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
 	      	      		\hline
-	      	      		ID  & Name                            & Description                                                                                                                                                                                                                                                                                                                                                                                                                                                            \\
+	      	      		ID  & Name                               & Description                                                                                                                                                                                                                                                  \\
 	      	      		\hline
-	      	      		022 & MatterTunnel-DeviceQRScanScreen & This screen is displayed for users to scan a QR code for adding a device. Once the QR code is successfully scanned, the screen changes to black, and a message “QR Code Scan Complete!” appears. “Scan again” button is also available at the bottom of the screen, allowing users to scan a new QR code if needed. If the QR code has already been scanned and the device is already registered, an alert message appears saying "Already Registered Device!" \\
+	      	      		024 & MatterTunnel-DeviceRegister Button & Once a device name is entered, the ``Register" button becomes active. Clicking this button triggers the addition of the device to the system. When the device is successfully registered, an alert message appears saying ``Device Successfully Registered." \\
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
 	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.25\linewidth]{MatterTunnelDeviceAdditionCancelButton.png}
+	      	      	\caption{Device Addition Cancel Button}
+	      	      	\label{fig:DeviceAdditionCancelButton}
+	      	      \end{figure}
+
+                  \vspace{5cm}
+	      	      	      	      
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
 	      	      		\hline
-	      	      		ID  & Name                         & Description                                                                                                                                                                                                                                                          \\
+	      	      		ID  & Name                                        & Description                                                                                                                                                                                                  \\
 	      	      		\hline
-	      	      		023 & MatterTunnel-DeviceNameInput & After successfully scanning a QR code, this input field allows users to name the device. The input field becomes active, enabling users to assign a unique name to the device they are registering. Once the name is entered, the "Register" button will be enabled. \\
-	      	      		\hline
-	      	      	\end{tabular}
-	      	      \end{table}
-	      	      
-	      	      \begin{table}[h!]
-	      	      	\def\arraystretch{1.24} \small
-	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
-	      	      		\hline
-	      	      		ID  & Name                               & Description                                                                                                                                                                                                                                                \\
-	      	      		\hline
-	      	      		024 & MatterTunnel-DeviceRegister Button & Once a device name is entered, the "Register" button becomes active. Clicking this button triggers the addition of the device to the system. When the device is successfully registered, an alert message appears saying "Device Successfully Registered." \\
+	      	      		025 & MatterTunnel-DeviceAddition CancelButton(X) & The ``Cancel" button allows users to exit the Device Addition screen without adding a new device. Clicking this button returns users to the Device List screen, canceling the addition process at any point. \\
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
-	      	      
-	      	      \begin{table}[h!]
-	      	      	\def\arraystretch{1.24} \small
-	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
-	      	      		\hline
-	      	      		ID  & Name                                        & Description                                                                                                                                                                                                 \\
-	      	      		\hline
-	      	      		025 & MatterTunnel-DeviceAddition CancelButton(X) & The "Cancel" button allows users to exit the Device Addition screen without adding a new device. Clicking this button returns users to the Device List screen, canceling the addition process at any point. \\
-	      	      		\hline
-	      	      	\end{tabular}
-	      	      \end{table}
-	      	              
+	      	      	      	              
 	      	\item Device deletion
-	      	      \vspace{10cm}
-	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.5\linewidth]{MatterTunnelDeviceDeletionScreen.png}
+	      	      	\caption{Device Deletion Screen}
+	      	      	\label{fig:DeviceDeletionScreen}
+	      	      \end{figure}
+	      	      	      	      
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
 	      	      		\hline
-	      	      		ID  & Name                              & Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \\
+	      	      		ID  & Name                              & Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \\
 	      	      		\hline
-	      	      		026 & MatterTunnel-DeviceDeletionScreen & This screen is displayed when the user clicks the “-” button to initiate the device deletion process. The checkboxes appear at the top-right corner of each device component, and the “Cancel” and “Delete” buttons replace the previous button. The user can select one or more devices for deletion. After selecting the devices, the “Delete” button becomes active. The user can confirm the deletion, and a confirmation message is shown once the devices are successfully deleted. If the user chooses to cancel, the selection is cleared, and no changes are made to the device list. \\
+	      	      		026 & MatterTunnel-DeviceDeletionScreen & This screen is displayed when the user clicks the ``-" button to initiate the device deletion process. The checkboxes appear at the top-right corner of each device component, and the ``Cancel" and ``Delete" buttons replace the previous button. The user can select one or more devices for deletion. After selecting the devices, the ``Delete" button becomes active. The user can confirm the deletion, and a confirmation message is shown once the devices are successfully deleted. If the user chooses to cancel, the selection is cleared, and no changes are made to the device list. \\
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
 	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=1\linewidth]{MatterTunnelDeviceDeletionCheckbox.png}
+	      	      	\caption{Device Deletion Checkbox}
+	      	      	\label{fig:DeviceDeletionCheckbox}
+	      	      \end{figure}
+	      	      	      	      
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
 	      	      		\hline
 	      	      		ID  & Name                                & Description                                                                                                                                                                                                                                                                            \\
 	      	      		\hline
-	      	      		027 & MatterTunnel-DeviceDeletionCheckbox & This checkbox appears at the top-right corner of each device component on the Device Deletion screen. Users can select one or more devices for deletion by checking the corresponding checkboxes. The checkboxes become active once the device list is displayed in the deletion mode. \\
+	      	      		027 & MatterTunnel-DeviceDeletion Checkbox & This checkbox appears at the top-right corner of each device component on the Device Deletion screen. Users can select one or more devices for deletion by checking the corresponding checkboxes. The checkboxes become active once the device list is displayed in the deletion mode. \\
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
+
+                  \vspace{5cm}
 	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.25\linewidth]{MatterTunnelDeviceDeletionCancelButton.png}
+	      	      	\caption{Device Deletion Cancel Button}
+	      	      	\label{fig:DeviceDeletionCancelButton}
+	      	      \end{figure}
+	      	      	      	      
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
 	      	      		\hline
-	      	      		ID  & Name                                     & Description                                                                                                                                                                                                                             \\
+	      	      		ID  & Name                                     & Description                                                                                                                                                                                                                            \\
 	      	      		\hline
-	      	      		028 & MatterTunnel-DeviceDeletion CancelButton & This button allows users to cancel the device deletion process. It is displayed on the Device Deletion screen alongside the "Delete" button. If clicked, the user’s selection is cleared, and no changes are made to the device list. \\
+	      	      		028 & MatterTunnel-DeviceDeletion CancelButton & This button allows users to cancel the device deletion process. It is displayed on the Device Deletion screen alongside the ``Delete" button. If clicked, the user's selection is cleared, and no changes are made to the device list. \\
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
 	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.25\linewidth]{MatterTunnelDeviceDeletionButton.png}
+	      	      	\caption{Device Deletion Button}
+	      	      	\label{fig:DeviceDeletionButton}
+	      	      \end{figure}
+	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.8\linewidth]{MatterTunnelDeviceDeletionAlert.png}
+	      	      	\caption{Device Deletion Alert}
+	      	      	\label{fig:DeviceDeletionAlert}
+	      	      \end{figure}
+
+                   \vspace{5cm}
+	      	      	      	      
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
@@ -1841,53 +2066,111 @@ cloud cost.
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
-	      	      
-	      	      \vspace{10cm}
-	      	      
+	      	      	      	      
 	      	\item Device control
+	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.75\linewidth]{MatterTunnelDeviceControlScreen.png}
+	      	      	\caption{Device Control Screen}
+	      	      	\label{fig:DeviceControlScreen}
+	      	      \end{figure}
+                  
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
-	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
+	      	      	\begin{tabular}{|p{0.5cm}|p{1.8cm}|p{5.4cm}|}
 	      	      		\hline
 	      	      		ID  & Name                              & Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   \\
 	      	      		\hline
-	      	      		030 & MatterTunnel-DeviceControl Screen & This screen provides users with the option to control device functions within the Matter Tunnel system. It features two main components: Feedback and Device Functions. The Feedback section displays the feedback received from the server after executing a function. The Device Functions section lists the available actions, which are derived from the device's QR code. When a function is executed, a transaction is sent to the server, and the corresponding feedback is displayed, allowing users to interact with the device and manage settings. \\
+	      	      		030 & MatterTunnel-DeviceControl Screen & This screen provides users with the option to control device functions within the Matter Tunnel system. It features two main components: Feedback and Device Functions. The Feedback section displays the feedback received. The Device Functions section lists the available actions. When a function is executed, a transaction is sent to the blockchain, and the corresponding feedback is displayed.\\
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
+
+                  \clearpage
 	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.75\linewidth]{MatterTunnelDeviceFeedbackSection.png}
+	      	      	\caption{Device Feedback Section 1}
+	      	      	\label{fig:DeviceFeedbackSection1}
+	      	      \end{figure}
+	      	      
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.75\linewidth]{MatterTunnelDeviceFeedbackSection2.png}
+	      	      	\caption{Device Feedback Section 2}
+	      	      	\label{fig:DeviceFeedbackSection2}
+	      	      \end{figure}
+	      	      	      	      
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
 	      	      		\hline
-	      	      		ID  & Name                                & Description                                                                                                                                                                                                                                                                                                                                                                                      \\
+	      	      		ID  & Name                                & Description                                                                                                                                                                                                                                                                                                                                                                                       \\
 	      	      		\hline
-	      	      		031 & MatterTunnel-DeviceFeedback Section & This section displays the feedback received from the server after executing a function. It includes details such as the device icon, device name, and the feedback content. While the function is being executed, the feedback section shows the message "Processing Transaction...". Once the function is completed, the appropriate feedback is displayed based on the function’s execution. \\
+	      	      		031 & MatterTunnel-DeviceFeedback Section & This section displays the feedback received from the server after executing a function. It includes details such as the device icon, device name, and the feedback content. While the function is being executed, the feedback section shows the message ``Processing Transaction...". Once the function is completed, the appropriate feedback is displayed based on the function’s execution. \\
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
-	      	      
-	      	      \vspace{10cm}
-	      	      
+
+                  \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.8\linewidth]{DeviceFunctionError1.png}
+	      	      	\caption{Device Function Error 1}
+	      	      	\label{fig:enter-label}
+	      	      \end{figure}
+
+                  \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.8\linewidth]{DeviceFunctionError2.png}
+	      	      	\caption{Device Function Error 2}
+	      	      	\label{fig:enter-label}
+	      	      \end{figure}
+
+                  \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.8\linewidth]{DeviceFunctionError3.png}
+	      	      	\caption{Device Function Error 3}
+	      	      	\label{fig:enter-label}
+	      	      \end{figure}
+                  
+	      	      \begin{figure}[h!]
+	      	      	\centering
+	      	      	\includegraphics[width=0.75\linewidth]{MatterTunnelDeviceFunction.png}
+	      	      	\caption{Device Function}
+	      	      	\label{fig:DeviceFunction}
+	      	      \end{figure}
+	      	      	      	      
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
-	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
+	      	      	\begin{tabular}{|p{1cm}|p{2.2cm}|p{4.5cm}|}
 	      	      		\hline
-	      	      		032 & MatterTunnel-DeviceFunction Name          & This component displays the name of the function retrieved from the device’s QR code. Each device has different functions, and this field shows the specific function available for that device. The function name serves as an indicator of what action will be executed once the user interacts with it.                                                                                         \\
+	      	      		032 & MatterTunnel-DeviceFunction Name          & This component displays the name of the function retrieved from the device’s QR code. Each device has different functions, and this field shows the specific function available for that device. The function name serves as an indicator of what action will be executed once the user interacts with it.                                                                                           \\
 	      	      		\hline
-	      	      		033 & MatterTunnel-DeviceFunction Arguments     & This section shows the arguments required for the function, which may vary based on the function itself. If the function requires inputs, users can provide them here. If the required number of arguments is not entered, the message "Please Enter All Parameters" will appear. If the arguments do not match the expected format, an error message "Please Enter Valid Format" will be displayed. \\
+	      	      		033 & MatterTunnel-DeviceFunction Arguments     & This section shows the arguments required for the function, which may vary based on the function itself. If the function requires inputs, users can provide them here. If the required number of arguments is not entered, the message ``Please Enter All Parameters" will appear. If the arguments do not match the expected format, an error message ``Please Enter Valid Format" will be displayed. \\
 	      	      		\hline
-	      	      		034 & MatterTunnel-DeviceFunction ExecuteButton & This button allows users to execute the function after providing the necessary arguments. Once clicked, a transaction is sent to the server to perform the requested function, and feedback is shown in the Feedback section. The button is only enabled once the required inputs are correctly filled out.                                                                                          \\
+	      	      		034 & MatterTunnel-DeviceFunction ExecuteButton & This button allows users to execute the function after providing the necessary arguments. Once clicked, a transaction is sent to the server to perform the requested function, and feedback is shown in the Feedback section. The button is only enabled once the required inputs are correctly filled out.                                                                                            \\
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
 	      \end{enumerate}
 \end{enumerate}
 
+\clearpage
+
 {\centering \textbf{Dashboard} \par}
 
 \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	\item Dashboard Screen
+
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=1\linewidth]{DashboardScreen.png}
+                \caption{Dashboard Screen}
+                \label{fig:DashboardScreen}
+            \end{figure}
+    
 	      \begin{table}[h!]
 	      	\def\arraystretch{1.24} \small
 	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
@@ -1898,12 +2181,20 @@ cloud cost.
 	      		\hline
 	      	\end{tabular}
 	      \end{table}
-	      
-	      \vspace{10cm}
-	      
+	      	      	      	      
 	\item Dashboard Components
 	      \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	      	\item Transactions Per Second Chart
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{DashboardTransactionsPerSec.png}
+    \caption{Transactions Per Sec}
+    \label{fig:enter-label}
+\end{figure}
+
+\vspace{5cm}
+            
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
@@ -1914,8 +2205,16 @@ cloud cost.
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
-	      	      
+	      	      	      	      
 	      	\item Transactions by PK Chart
+
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=1\linewidth]{DashboardTransactionsByPK.png}
+                \caption{Transactions By PK}
+                \label{fig:enter-label}
+            \end{figure}
+            
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
@@ -1926,8 +2225,18 @@ cloud cost.
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
-	      	      
+
+                  \clearpage
+	      	      	      	      
 	      	\item Total Transactions and Users
+
+                \begin{figure}[h!]
+                    \centering
+                    \includegraphics[width=1\linewidth]{Dashboard-Total.png}
+                    \caption{Dashboard Total}
+                    \label{fig:enter-label}
+                \end{figure}
+            
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
@@ -1938,22 +2247,38 @@ cloud cost.
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
-	      	              
-	      	      \vspace{10cm}
-	      	      
+	      	      	      	      
 	      	\item Transaction Management and Natural Language Processing
+
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=1\linewidth]{DashboardNLQueryTool.png}
+                \caption{Dashboard NL Query Tool}
+                \label{fig:enter-label}
+            \end{figure}
+
+            \vspace{5cm}
+            
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
 	      	      		\hline
-	      	      		ID  & Name                  & Description                                                                                                                                                                                                                                                                                                                                                                                                            \\
+	      	      		ID  & Name                  & Description                                                                                                                                                                                                                                                                                                                                                                                                             \\
 	      	      		\hline
-	      	      		005 & Dashboard-NLQueryTool & A tool that allows users to manage and query blockchain transaction details using natural language. Users can input queries such as "Show all transactions for PK X in the last week," and results are displayed visually for easy interpretation. This tool enables the management of blockchain transactions across the IoT industry and allows users to query transaction data through natural language processing. \\
+	      	      		005 & Dashboard-NLQueryTool & A tool that allows users to manage and query blockchain transaction details using natural language. Users can input queries such as ``Show all transactions for PK X in the last week", and results are displayed visually for easy interpretation. This tool enables the management of blockchain transactions across the IoT industry and allows users to query transaction data through natural language processing. \\
 	      	      		\hline
 	      	      	\end{tabular}
 	      	      \end{table}
-	      	      
+	      	      	      	      
 	      	\item Refresh Button
+
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=0.15\linewidth]{RefreshButton.png}
+                \caption{Refresh Button}
+                \label{fig:enter-label}
+            \end{figure}
+            
 	      	      \begin{table}[h!]
 	      	      	\def\arraystretch{1.24} \small
 	      	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
@@ -1965,8 +2290,15 @@ cloud cost.
 	      	      	\end{tabular}
 	      	      \end{table}
 	      \end{enumerate}
-	      
+	      	      
 	\item Dashboard Navigation Menu
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\linewidth]{Navigation.png}
+        \caption{Navigation}
+        \label{fig:enter-label}
+    \end{figure}
 	      \begin{table}[h!]
 	      	\def\arraystretch{1.24} \small
 	      	\begin{tabular}{|p{1.2cm}|p{2.5cm}|p{4.0cm}|}
@@ -1979,7 +2311,7 @@ cloud cost.
 	      \end{table}
 \end{enumerate}
 
-\vspace{10cm}
+\clearpage
 
 \section{Architecture Design \& Implementation}
 \subsection{Overall Architecture}
@@ -1995,7 +2327,7 @@ Matter Tunnel's architecture consists of several interconnected modules designed
 
 \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	\item{Core Modules}
-		
+			
 	\begin{enumerate}
 		\item Client Application
 		      \begin{itemize}[itemsep=0.5pt, parsep=0.5pt]
@@ -2004,7 +2336,7 @@ Matter Tunnel's architecture consists of several interconnected modules designed
 		      	\item Integrates WebAssembly-compiled Matter Tunnel utilities
 		      	\item Communicates with the gateway for blockchain interaction
 		      \end{itemize}
-		      		      
+		      		      		      
 		\item Matter Tunnel Utility
 		      \begin{itemize}[itemsep=0.5pt, parsep=0.5pt]
 		      	\item Core functionality implemented in C++
@@ -2016,7 +2348,7 @@ Matter Tunnel's architecture consists of several interconnected modules designed
 		      	\item Ensures consistent behavior across different platforms
 		      	\item Handles device communication and protocol management
 		      \end{itemize}
-		      		      
+		      		      		      
 		\item Gateway
 		      \begin{itemize}[itemsep=0.5pt, parsep=0.5pt]
 		      	\item Serves as intermediary between clients/devices and blockchain
@@ -2024,7 +2356,7 @@ Matter Tunnel's architecture consists of several interconnected modules designed
 		      	\item Provides standardized API for blockchain interaction
 		      	\item Manages connection pooling and request routing
 		      \end{itemize}
-		      		      
+		      		      		      
 		\item Hyperledger Fabric Network
 		      \begin{itemize}[itemsep=0.5pt, parsep=0.5pt]
 		      	\item Implements decentralized device management
@@ -2032,7 +2364,7 @@ Matter Tunnel's architecture consists of several interconnected modules designed
 		      	\item Provides high-performance transaction processing
 		      	\item Supports multiple channels for scalability
 		      \end{itemize}
-		      		      
+		      		      		      
 		\item Dashboard Application
 		      \begin{itemize}[itemsep=0.5pt, parsep=0.5pt]
 		      	\item Built with Electron for desktop performance
@@ -2040,7 +2372,7 @@ Matter Tunnel's architecture consists of several interconnected modules designed
 		      	\item Provides comprehensive monitoring and analytics interface
 		      	\item Integrates with AI component through IPC
 		      \end{itemize}
-		      		      
+		      		      		      
 		\item AI Analysis Component
 		      \begin{itemize}[itemsep=0.5pt, parsep=0.5pt]
 		      	\item Based on fine-tuned T5 model
@@ -2049,11 +2381,11 @@ Matter Tunnel's architecture consists of several interconnected modules designed
 		      	\item Generates blockchain queries from natural language
 		      \end{itemize}
 	\end{enumerate}
-		
+			
 	\item{Key Technical Decisions}
-		
+			
 	The architecture reflects several key technical decisions made to optimize system performance and usability:
-		
+			
 	\begin{enumerate}
 		\item Development Approach
 		      \begin{itemize}[itemsep=0.5pt, parsep=0.5pt]
@@ -2062,14 +2394,14 @@ Matter Tunnel's architecture consists of several interconnected modules designed
 		      	\item C++ for core Matter Tunnel functionality
 		      	\item WebAssembly for web integration
 		      \end{itemize}
-		      		      
+		      		      		      
 		\item Communication Protocols
 		      \begin{itemize}[itemsep=0.5pt, parsep=0.5pt]
 		      	\item gRPC for blockchain communication
 		      	\item IPC for AI-Dashboard interaction
 		      	\item Gateway API for client-blockchain abstraction
 		      \end{itemize}
-		      		      
+		      		      		      
 		\item AI Implementation
 		      \begin{itemize}[itemsep=0.5pt, parsep=0.5pt]
 		      	\item T5 model fine-tuning for specific use case
@@ -2094,7 +2426,7 @@ Matter Tunnel's blockchain infrastructure is built on Hyperledger Fabric, implem
 
 \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	\item{Network Components}
-		
+			
 	\begin{enumerate}
 		\item Peer Organizations
 		      \begin{itemize}[itemsep=0.5pt, parsep=0.5pt]
@@ -2103,7 +2435,7 @@ Matter Tunnel's blockchain infrastructure is built on Hyperledger Fabric, implem
 		      	\item Responsible for endorsing transactions and maintaining state
 		      	\item Hosts chaincode for device management and communication
 		      \end{itemize}
-		      		      
+		      		      		      
 		\item Ordering Service
 		      \begin{itemize}[itemsep=0.5pt, parsep=0.5pt]
 		      	\item Four ordering nodes (orderer1-4) in Byzantine Fault Tolerance configuration
@@ -2111,7 +2443,7 @@ Matter Tunnel's blockchain infrastructure is built on Hyperledger Fabric, implem
 		      	\item Ensures consensus among network participants
 		      	\item Can continue operation even if f nodes fail, where f = (n-1)/3
 		      \end{itemize}
-		      		      
+		      		      		      
 		\item Gateway Service
 		      \begin{itemize}[itemsep=0.5pt, parsep=0.5pt]
 		      	\item Provides simplified access point for end systems
@@ -2119,7 +2451,7 @@ Matter Tunnel's blockchain infrastructure is built on Hyperledger Fabric, implem
 		      	\item Handles authentication and authorization
 		      	\item Optimizes network communication
 		      \end{itemize}
-		      		      
+		      		      		      
 		\item End Systems
 		      \begin{itemize}[itemsep=0.5pt, parsep=0.5pt]
 		      	\item Multiple user applications and devices
@@ -2128,9 +2460,9 @@ Matter Tunnel's blockchain infrastructure is built on Hyperledger Fabric, implem
 		      	\item Supports various client implementations
 		      \end{itemize}
 	\end{enumerate}
-		
+			
 	\item{Communication Patterns}
-		
+			
 	\begin{enumerate}
 		\item Gateway-mediated Communication
 		      \begin{itemize}[itemsep=0.5pt, parsep=0.5pt]
@@ -2139,7 +2471,7 @@ Matter Tunnel's blockchain infrastructure is built on Hyperledger Fabric, implem
 		      	\item Centralized authentication management
 		      	\item Optimal for standard client applications
 		      \end{itemize}
-		      		      
+		      		      		      
 		\item Direct gRPC Communication
 		      \begin{itemize}[itemsep=0.5pt, parsep=0.5pt]
 		      	\item High-performance direct peer connection
@@ -2148,9 +2480,9 @@ Matter Tunnel's blockchain infrastructure is built on Hyperledger Fabric, implem
 		      	\item Used by dashboard and specialized clients
 		      \end{itemize}
 	\end{enumerate}
-		
+			
 	\item{Fault Tolerance}
-		
+			
 	\begin{enumerate}
 		\item Byzantine Fault Tolerance
 		      \begin{itemize}[itemsep=0.5pt, parsep=0.5pt]
@@ -2159,7 +2491,7 @@ Matter Tunnel's blockchain infrastructure is built on Hyperledger Fabric, implem
 		      	\item Maintains consensus under malicious behavior
 		      	\item Provides strong consistency guarantees
 		      \end{itemize}
-		      		      
+		      		      		      
 		\item High Availability
 		      \begin{itemize}[itemsep=0.5pt, parsep=0.5pt]
 		      	\item Multiple peers ensure continuous operation
@@ -2179,15 +2511,15 @@ Matter Tunnel consists of six GitHub repositories: blockchain, IoT\_embedded, AI
 
 \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	\item The blockchain repository handles blockchain-related implementation built on Hyperledger Fabric. This repository contains smart contracts and protocols designed to enable secure device-user communication between applications and IoT devices, ensuring complete end-to-end encryption(E2EE) and enhanced security.
-	      	          
+	      	      	          
 	\item The IoT\_embedded repository is dedicated to embedded systems development for IoT devices. It contains software implementations for devices compatible with the Matter Tunnel protocol and the proposed blockchain solution. This repository focuses on implementing features that enhance device functionality.
-	      	          
+	      	      	          
 	\item The AI\_dashboard repository creates and manages dashboard interfaces for monitoring and controlling IoT devices connected through the Matter Tunnel System. This repository implements both AI services and frontend visualization components to provide a comprehensive view of IoT device operations and blockchain network status. It integrates data processing capabilities with user-friendly interfaces, enabling real-time monitoring, visualization of transactions.
-	      	          
+	      	      	          
 	\item The matter\_tunnel\_utils repository provides essential utilities and tools for handling Matter tunnel protocol operations. It implements the core functionality that enables direct P2P communication between applications and IoT devices on the blockchain.
-	      	          
+	      	      	          
 	\item The client repository focuses on developing the front-end application that provides user interfaces for IoT device control. This repository contains code for implementing intuitive and responsive front-end solutions that integrate with both the Matter protocol and blockchain technology, ensuring a smooth user experience without requiring a Matter hub.
-	      	          
+	      	      	          
 	\item The Documents repository maintains comprehensive project documentation, including technical specifications, architecture designs, and implementation details of the Matter Tunnel system.
 \end{enumerate}
 
@@ -2486,50 +2818,159 @@ https://github.com/Winter-Zzzz/client/src
 \subsection{Use case 1: Client}
 
 \begin{enumerate}[itemsep=2ex, parsep=1ex]
-    \item{Initial Experience}
-        
-        When users first launch the application, they are greeted with the Matter Tunnel logo on the entry screen while the system loads. Following this, new users are presented with a comprehensive tutorial that introduces core functionalities through multiple slides. Users can navigate through the tutorial using the "Next" button or choose to skip it entirely. The tutorial concludes by directing users to the login page to begin using the application.
-        
-    \item{Login}
-        
-        The Login page enables users to access the system by entering their private key for authentication. Users must input a 64-character hexadecimal key (using characters 0-9 and A-F) for validation. If the key format is incorrect, the system displays an error message "Your key is incorrectly formatted". This secure authentication method ensures that only authorized users can access their device management interface.
-        
-    \item{Sign Up}
-        \begin{enumerate}
-            \item Sign Up button: The user needs its own private key to use program. They can create new private key by clicking "Sign up" button on the login page. The system then generates and displays a new private key.
-            
-            \item Copy button: Users can copy using the "Copy" button. After creating their own key, they can proceed to the login screen and attempt to log in with the newly created private key.
-            
-            \item A "Sign Up Completed" message confirms successful registration.
-        \end{enumerate}
-        
-    \item{Main Page}
-        \begin{enumerate}
-            \item QR Code recognition: On the main page, users can add new devices to their system by clicking '+' button. After clicking the button, users enter the scanning interface where they can capture the device's QR code. Upon successful scanning, the screen displays "QR Code Scan Complete!" A "Rescan" option is available if needed. If the scanned device is already registered, the system shows "Already Registered Device!" warning.
-            
-            \item Device addition: After QR scan, users can input a custom name for the device and the "Register" button becomes active. The system provides immediate feedback through notifications, either confirming successful registration with "Device Registration Complete" or warning if the device is already registered. Users can cancel the addition process at any time using the X button.
-            
-            \item Device List Management: The main screen displays all registered devices in a square card format, with each card showing the device icon, name, and public key obtained from the QR code. A three-dot menu button ($\cdots$) on each card provides access to device controls. When accessed, users can view device feedback from the server and execute available device. The function section includes input fields for required arguments and displays "Processing Transaction..." during execution. Users can easily monitor and manage their connected devices from this central interface.
-            
-            \item Device Deletion: Users can initiate device removal by clicking the '-' button, which activates deletion mode. This displays checkboxes on each device card, allowing users to select multiple devices for simultaneous deletion. The interface shows "Delete" and "Cancel" buttons during deletion mode. The deletion process requires at least one device selection and confirms the removal through a notification message.
-        \end{enumerate}
-        
-    \item{Navigation}
-        
-        The application features a bottom navigation bar containing Home and Account buttons. The Home button returns users to the Device List screen. The Account Button directs account management page. This navigation bar remains visible throughout the application except during login and signup processes.
-        
-    \item{Account Management}
-        
-        When users click the Account button, they are directed to the account management page where they can view their public key information and manage their private key settings. Users can copy their private key using the "Copy Private Key" button. It displays a "Private key copied" alert upon successful copying. The page also includes a "Logout" button that, when clicked, logs the user out and redirects them to the login page with a "Logout Completed" confirmation message.
-\end{enumerate}
+	\item{Initial Experience}
 
-\vspace{5cm}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{initialExperience.png}
+    \caption{initial experience 1}
+    \label{fig:enter-label}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{initialExperience2.png}
+    \caption{initial experience 2}
+    \label{fig:enter-label}
+\end{figure}
+            
+	When users first launch the application, they are greeted with the Matter Tunnel logo on the entry screen while the system loads. Following this, new users are presented with a comprehensive tutorial that introduces core functionalities through multiple slides. Users can navigate through the tutorial using the ``Next" button or choose to skip it entirely. The tutorial concludes by directing users to the login page to begin using the application.
+	        
+	\item{Login}
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.9\linewidth]{login.png}
+        \caption{login}
+        \label{fig:enter-label}
+    \end{figure}
+	        
+	The Login page enables users to access the system by entering their private key for authentication. Users must input a 64-character hexadecimal key (using characters 0-9 and A-F) for validation. If the key format is incorrect, the system displays an error message ``Your key is incorrectly formatted". This secure authentication method ensures that only authorized users can access their device management interface.
+
+    \clearpage
+	        
+	\item{Sign Up}
+	\begin{enumerate}
+		\item Sign Up button
+
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.9\linewidth]{signUpButton.png}
+            \caption{SignUp Button}
+            \label{fig:enter-label}
+        \end{figure}
+        
+        The user needs its own private key to use program. They can create new private key by clicking ``Sign up" button on the login page. The system then generates and displays a new private key.
+		                  
+		\item Copy button
+
+        Users can copy using the ``Copy" button. After creating their own key, they can proceed to the login screen and attempt to log in with the newly created private key.
+
+        \vspace{5cm}
+
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.9\linewidth]{copyButton.png}
+            \caption{Copy Button}
+            \label{fig:enter-label}
+        \end{figure}
+		                  
+		\item A ``Sign Up Completed" message confirms successful registration.
+
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.7\linewidth]{SignUpCompletedMessage.png}
+            \caption{SignUp Completed Message}
+            \label{fig:enter-label}
+        \end{figure}
+	\end{enumerate}
+
+    \clearpage
+	        
+	\item{Main Page}
+	\begin{enumerate}
+		\item QR Code recognition
+
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.9\linewidth]{QRCodeRecognition.png}
+            \caption{QR Code Recognition}
+            \label{fig:enter-label}
+        \end{figure}
+        
+        On the main page, users can add new devices to their system by clicking `+' button. After clicking the button, users enter the scanning interface where they can capture the device's QR code. Upon successful scanning, the screen displays ``QR Code Scan Complete!" A ``Rescan" option is available if needed. If the scanned device is already registered, the system shows ``Already Registered Device!" warning.
+		                  
+		\item Device Addition
+
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\linewidth]{DeviceAddition.png}
+            \caption{Device Addition}
+            \label{fig:enter-label}
+        \end{figure}
+        
+        After QR scan, users can input a custom name for the device and the ``Register" button becomes active. The system provides immediate feedback through notifications, either confirming successful registration with ``Device Registration Complete" or warning if the device is already registered. Users can cancel the addition process at any time using the X button.
+		                  
+		\item Device List Management
+
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.9\linewidth]{DeviceList.png}
+            \caption{Device List Management}
+            \label{fig:enter-label}
+        \end{figure}
+        
+        The main screen displays all registered devices in a square card format, with each card showing the device icon, name, and public key obtained from the QR code. A three-dot menu button : on each card provides access to device controls. When accessed, users can view device feedback from the server and execute available device. The function section includes input fields for required arguments and displays ``Processing Transaction..." during execution. Users can easily monitor and manage their connected devices from this central interface.
+
+        \clearpage
+		                  
+		\item Device Deletion
+        
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.9\linewidth]{DeviceDeletion.png}
+            \caption{Device Deletion}
+            \label{fig:enter-label}
+        \end{figure}
+        
+        Users can initiate device removal by clicking the `-' button, which activates deletion mode. This displays checkboxes on each device card, allowing users to select multiple devices for simultaneous deletion. The interface shows ``Delete" and ``Cancel" buttons during deletion mode. The deletion process requires at least one device selection and confirms the removal through a notification message.
+	\end{enumerate}
+	        
+	\item{Navigation}
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.9\linewidth]{Navigation1.png}
+        \caption{Navigation}
+        \label{fig:enter-label}
+    \end{figure}
+	        
+	The application features a bottom navigation bar containing Home and Account buttons. The Home button returns users to the Device List screen. The Account Button directs account management page. This navigation bar remains visible throughout the application except during login and signup processes.
+	        
+	\item{Account Management}
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.9\linewidth]{AccountManagement1.png}
+        \caption{Account Management 1}
+        \label{fig:enter-label}
+    \end{figure}
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.9\linewidth]{AccountManagement2.png}
+        \caption{Account Management 2}
+        \label{fig:enter-label}
+    \end{figure}
+	        
+	When users click the Account button, they are directed to the account management page where they can view their public key information and manage their private key settings. Users can copy their private key using the ``Copy Private Key" button. It displays a ``Private key copied" alert upon successful copying. The page also includes a ``Logout" button that, when clicked, logs the user out and redirects them to the login page with a ``Logout Completed" confirmation message.
+\end{enumerate}
 
 \subsection{Use case 2: Enterprise}
     
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=1\linewidth]{Dashboard_full.png}
+	\includegraphics[width=1\linewidth]{DashboardScreen.png}
 	\caption{Dashboard Full Screen}
 	\label{fig:Dashboard_full}
 \end{figure}
@@ -2537,41 +2978,74 @@ https://github.com/Winter-Zzzz/client/src
 The Matter Tunnel Dashboard is a comprehensive monitoring system designed to provide real-time visibility into transaction processing and system performance. The primary users of this dashboard are system administrators and performance analysts who need to track and analyze transaction throughput across different time periods and processing nodes.
 \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	\item TPS chart
-	      	      
+	      	      	      
 	      \begin{figure}[h!]
 	      	\centering
-	      	\includegraphics[width=1\linewidth]{TPSChart.png}
+	      	\includegraphics[width=1\linewidth]{DashboardTransactionsPerSec.png}
 	      	\caption{TPS Chart}
 	      	\label{fig:TPSChart}
 	      \end{figure}
-	      	      
+	      	      	      
 	      CopyThis is a real-time Transactions Per Second (TPS) line graph that refresh automatically to show the most recent 18-hour-period. The system plots actual transaction throughput as it occurs, allowing operators to observe performance trends and respond to any anomalies immediately.
-	      	      
+	      	      	      
 	\item PK transactions chart
-	      	      
+	      	      	      
 	      \begin{figure}[h!]
 	      	\centering
-	      	\includegraphics[width=1\linewidth]{PKTransactionsChart.png}
+	      	\includegraphics[width=1\linewidth]{DashboardTransactionsByPK.png}
 	      	\caption{PK Transactions Chart}
 	      	\label{fig:PKTransactionsChart}
 	      \end{figure}
-	      	      
+	      	      	      
 	      This horizontal bar chart displays transaction distribution across distinct PKs (Primary Keys). This visualization updates in real-time to reflect the current processing load across different nodes. The bars will dynamically adjust as transaction volumes shift between PKs, enabling immediate detection of load balancing issues or processing bottlenecks.
-	      	      
+	      	      	      
 	\item Total Transaction\&User Card
-	      	      
+	      	      	      
 	      \begin{figure}[h!]
 	      	\centering
-	      	\includegraphics[width=1\linewidth]{TotalTransactionUserCard.png}
+	      	\includegraphics[width=1\linewidth]{Dashboard-Total.png}
 	      	\caption{Total Transaction \& User Card}
 	      	\label{fig:TotalTransactionUserCard}
 	      \end{figure}
-	      	      
+	      	      	      
 	      This part of dashboard displays key transaction statistics through metric cards. The first card shows total transactions, and the second card shows total users. These cards provide administrators and operators with immediate visibility into the system's current usage and activity levels, enabling quick assessment of blockchain network participation and transaction volume.
+
+        \clearpage
+
+        \item Natural Language Query
+	      	      	      
+	      \begin{figure}[h!]
+	          \centering
+	          \includegraphics[width=1\linewidth]{NaturalLanguageQuery.png}
+	          \caption{Natural Language Query}
+	          \label{fig:enter-label}
+	      \end{figure}
+	      	      	      
+	      This chat-style interface transforms blockchain transaction data into an easily readable format, presenting information in familiar message bubbles. Each transaction displays key details including timestamp, public keys, and function type, allowing users to track and monitor blockchain activities as naturally as reading a conversation. It provides clear transaction identification headers, making it simple for users to follow specific transaction threads and understand the flow of blockchain activities.
+          
 \end{enumerate}
 
 \section{Discussion}
     
-...
-    
+\subsection{Technical Difficulties}
+
+During the development of Matter Tunnel, we encountered several technical hurdles that needed to be addressed. In our initial approach, we attempted to build WebAssembly from C++ code. While we successfully built simple C++ code to WebAssembly, we faced significant challenges when trying to link OpenSSL. Although we managed to build the required libraries as WebAssembly static libraries, the linking process produced various errors. Despite consulting numerous resources including Stack Overflow, we couldn't find a working solution. Due to time constraints, we ultimately decided to abandon the WebAssembly approach and instead implement native code for each platform (C++ and JavaScript).
+
+Working with byte and bit operations across different platforms proved challenging, particularly in ensuring JavaScript code matched C++ functionality exactly. We encountered numerous encoding issues, which we resolved by either converting problematic sections to base16 within functions or utilizing Latin-1 encoding where appropriate.
+
+The AI component also presented technical challenges, particularly due to computational resource limitations. Using Google Colab's GPU restrictions meant we had limited processing power and time for model training. This constraint affected our ability to implement extensive data augmentation techniques and train our models on diverse patterns. While we developed a synthetic data generation pipeline for natural language query processing, the GPU limitations prevented us from exploring more sophisticated augmentation methods that could have improved our model's robustness. Despite these constraints, we implemented an iterative training approach and efficient caching mechanisms to optimize our model's performance within the available resources.
+
+\subsection{Non-technical Difficulties}
+
+The most significant non-technical challenge was coordinating between different team members working on various components of the system. Each developers had different perspectives and priorities, which sometimes led to integration challenges and communication barriers. To address these challenges, we implemented regular meetings, and the increased frequency of communication proved highly effective, as it allowed team members to better understand each other’s constraints and requirements.
+
+Through consistent effort to maintain open communication, we were able to transform our initial challenges into opportunities for team growth and project improvement. The solutions we implemented not only resolved our immediate challenges but also established a strong foundation for future development. As a result, we successfully delivered Matter Tunnel with improved team dynamics and a more cohesive development process than when we started.
+
+
+\subsection{Conclusion}
+
+Matter Tunnel successfully demonstrated the feasibility of enabling communication between IoT devices and users without requiring additional hardware like Matter hubs. This breakthrough not only freed devices from spatial constraints but also expanded the range of supported functionalities beyond Matter's predefined application cluster specification. The implementation significantly enhanced security and privacy through blockchain-based end-to-end encryption and decentralization. From an enterprise perspective, the system substantially improved reliability by providing immutable transaction records and comprehensive data analytics capabilities, enabling more informed decision-making through transparent and trustworthy operational insights.
+
+Looking ahead, Matter Tunnel shows great promise in revolutionizing the IoT industry by providing a more open, secure, and flexible device management solution. Future development will focus on successfully implementing WebAssembly builds to enhance cross-platform compatibility and expanding platform support to accommodate a wider range of devices and use cases. Additionally, we aim to improve the dashboard's AI capabilities by incorporating advanced data augmentation techniques such as back translation, which will enhance the natural language processing system's performance and versatility in handling various query patterns.
+
 \end{document}
