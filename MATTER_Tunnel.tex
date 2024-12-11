@@ -1,5 +1,5 @@
 %% Matter_Tunnel.tex
-%% 2024/12/05
+%% 2024/12/10
 %% by Dongwook Kim, Jisu Shin, Giram Park, Seoyoon Jung
 
 \documentclass[conference]{IEEEtran}
@@ -1388,15 +1388,15 @@ cloud cost.
 	      	      	                  
 	\item Data Analytics and System Reliability
 	      	      	      
-	      Our AI Dashboard revolutionizes how organizations interact with blockchain data by making complex data analysis accessible to everyone, regardless of their technical background. At its core, the system transforms everyday language questions into precise blockchain queries, allowing business managers, analysts, and decision-makers to extract valuable insights without writing a single line of code.
-	                
-	      For example, a business manager can simply ask ``Show transactions from \{src\_pk\} to \{pk\}" and the system automatically converts this natural language question into appropriate technical queries, handling all the complex filtering and data retrieval operations behind the scenes. This breakthrough eliminates the traditional requirement for programming expertise or specialized blockchain knowledge, democratizing access to critical data.
-	      
-	      The system achieves this through a sophisticated AI model trained on 5000 carefully crafted examples of natural language questions and their corresponding technical queries. To ensure the system understands a wide variety of ways people might ask questions, we implemented advanced language processing techniques that help the AI recognize different phrasings of the same question.
-	      
-	      This direct interaction approach revolutionizes data analytics by eliminating multiple intermediaries present in traditional systems. Conventional approaches require data analysts to process raw data and relay servers to transmit processed information, creating multiple points where data could be corrupted or manipulated by malicious actors. Each intermediary step not only introduces potential security vulnerabilities but also raises questions about data authenticity.
-	      
-	      By connecting directly to the blockchain through secure gRPC connections, our AI Dashboard completely eliminates these risks. Instead of trusting multiple intermediaries, users receive data straight from the blockchain itself, ensuring complete data authenticity. The system combines this direct access with natural language processing, allowing decision-makers to query blockchain data through simple conversations while maintaining the highest level of data integrity. Whether you're requesting transaction histories, analyzing device patterns, or monitoring system status, you can trust that the data you're viewing is exactly what's recorded on the blockchain - unaltered and authentic.
+        Our AI Dashboard revolutionizes how organizations interact with blockchain data by making complex data analysis accessible to everyone, regardless of their technical background. At its core, the system transforms everyday language questions into precise blockchain queries, allowing business managers, analysts, and decision-makers to extract valuable insights without writing a single line of code.
+        	                
+        For example, a business manager can simply ask "Show transactions from \{src\_pk\} to \{pk\}" and the system automatically converts this natural language question into appropriate technical queries, handling all the complex filtering and data retrieval operations behind the scenes. This breakthrough eliminates the traditional requirement for programming expertise or specialized blockchain knowledge, democratizing access to critical data.
+        	      
+        The system achieves this through a sophisticated AI model trained on a comprehensive dataset of 10,000 carefully crafted examples of natural language questions and their corresponding technical queries. To ensure robust understanding of query variations, we implemented advanced data augmentation techniques using BERT-based contextual substitution and random word swapping, expanding our training data to over 3,000 examples while preserving semantic integrity. This approach helps the AI recognize different phrasings of the same question and maintain consistent query translation.
+        	      
+        This direct interaction approach revolutionizes data analytics by eliminating multiple intermediaries present in traditional systems. Conventional approaches require data analysts to process raw data and relay servers to transmit processed information, creating multiple points where data could be corrupted or manipulated by malicious actors. Each intermediary step not only introduces potential security vulnerabilities but also raises questions about data authenticity.
+        	      
+        By connecting directly to the blockchain through secure gRPC connections, our AI Dashboard completely eliminates these risks. Instead of trusting multiple intermediaries, users receive data straight from the blockchain itself, ensuring complete data authenticity. The system combines this direct access with natural language processing, allowing decision-makers to query blockchain data through simple conversations while maintaining the highest level of data integrity. Whether you're requesting transaction histories, analyzing device patterns, or monitoring system status, you can trust that the data you're viewing is exactly what's recorded on the blockchain - unaltered and authentic.
 	      
 	      	      	      
 	\item Decentralization
@@ -1414,8 +1414,6 @@ cloud cost.
 	      benefit of interoperability remains intact. The elimination of platform
 	      dependencies further enhances true decentralization, freeing users from vendor
 	      lock-in and creating a more open IoT environment.
-	      	      
-	      \vspace{3cm}
 	      	      	      
 	\item Enhanced Security and Privacy Protection
 	      	      	      
@@ -1512,16 +1510,16 @@ cloud cost.
 \end{figure}
 
 \subsection{Development Requirements Specifications}
-\vspace{0.5cm}
+\vspace{1cm}
 {\centering \textbf{Client} \par}
-\vspace{0.5cm}
+\vspace{1cm}
 
 \begin{enumerate}[itemsep=2ex, parsep=1ex]
 	\item Entry \& Tutorial
 	      
 	      \begin{figure}[h!]
 	      	\centering
-	      	\includegraphics[width=0.5\linewidth]{MatterTunnelEntry.png}
+	      	\includegraphics[width=0.8\linewidth]{MatterTunnelEntry.png}
 	      	\caption{Entry}
 	      	\label{fig:MatterTunnelEntry}
 	      \end{figure}
